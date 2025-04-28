@@ -4,9 +4,7 @@ from datetime import datetime
 from loguru import logger
 
 from app.config.settings import settings
-from app.models.models import Item, SearchSettings
-from backup_files.scraper import scraper
-from app.services.storage import item_storage, search_settings_storage
+from app.services.scan_service import scan_service
 
 
 class ParsingWorker:
@@ -17,46 +15,13 @@ class ParsingWorker:
         self.running = False
         self.task = None
     
-    async def process_search_settings(self, search_settings: SearchSettings):
-        """Process a single search settings configuration."""
-        logger.info(f"Processing search settings: {search_settings.item_name} in {search_settings.location}")
-        
-        # Fetch items from Kleinanzeigen
-        items = await scraper.search(search_settings)
-        
-        # Process found items
-        for item in items:
-            # Check if item already exists
-            existing_item = item_storage.get_by_id(item.id)
-            
-            if existing_item:
-                # Already have this item, but update it with potentially new info
-                logger.debug(f"Item {item.id} already exists, updating")
-                
-                # Preserve is_sent information
-                item.is_sent = existing_item.is_sent
-                
-                # Update item
-                item_storage.save(item)
-            else:
-                # New item found
-                logger.info(f"New item found: {item.title} ({item.id})")
-                
-                # Save new item
-                item_storage.save(item)
-    
     async def run_once(self):
-        """Run a single parsing cycle for all active search settings."""
+        """Run a single parsing cycle."""
         try:
-            # Get all active search settings
-            all_settings = search_settings_storage.get_all()
-            active_settings = [s for s in all_settings if s.is_active]
+            logger.info("Starting parsing cycle")
             
-            logger.info(f"Starting parsing cycle with {len(active_settings)} active search settings")
-            
-            # Process each search setting
-            for settings in active_settings:
-                await self.process_search_settings(settings)
+            # Use scan service to fetch new items
+            await scan_service.scan_for_new_items()
             
             logger.info("Parsing cycle completed")
         

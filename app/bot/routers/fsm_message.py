@@ -8,6 +8,7 @@ from app.bot.keyboards import (
     get_confirm_keyboard,
     get_main_menu,
 )
+from app.models.models import SearchSettings
 from app.services.storage import search_settings_storage
 from app.bot.routers.states import AddSearchStates
 

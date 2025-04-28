@@ -1,7 +1,8 @@
 import json
 import os
+from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Callable
 
 from dotenv import load_dotenv
 from pydantic import field_validator
@@ -32,6 +33,7 @@ class Settings(BaseSettings):
     USERS_FILE: Path = DATA_DIR / "users.json"
     SEARCH_SETTINGS_FILE: Path = DATA_DIR / "search_settings.json"
     ITEMS_FILE: Path = DATA_DIR / "items.json"
+    NOTIFICATIONS_FILE: Path = DATA_DIR / "notifications.json"
     
     # Logging
     LOG_DIR: Path = ROOT_DIR / "logs"
@@ -51,6 +53,11 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         case_sensitive = True
+    
+    # Helper function to get current time (useful for testing)
+    @property
+    def NOW(self) -> Callable[[], datetime]:
+        return datetime.now
 
 
 # Create instance of settings

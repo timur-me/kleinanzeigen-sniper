@@ -7,9 +7,6 @@ from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import BotCommand
 
-from app.bot.routers import main_router as handlers_router
-from app.bot.routers import help_router
-
 from app.bot.routers import (
     help_router,
     start_router,
@@ -35,9 +32,9 @@ async def on_startup(bot: Bot):
 
     # TODO: REWORK THIS parsing worker.
     
-    # # Start parsing worker
-    # logger.info("Starting parsing worker...")
-    # parsing_worker.start()
+    # Start parsing worker
+    logger.info("Starting parsing worker...")
+    parsing_worker.start()
     
     # Set up commands
     await bot.set_my_commands([
@@ -55,9 +52,9 @@ async def on_shutdown(bot: Bot):
     """Execute actions on bot shutdown."""
     logger.info("Bot is shutting down...")
     
-    # # Stop parsing worker
-    # logger.info("Stopping parsing worker...")
-    # parsing_worker.stop()
+    # Stop parsing worker
+    logger.info("Stopping parsing worker...")
+    parsing_worker.stop()
     
     logger.info("Bot shutdown completed.")
 
@@ -82,7 +79,7 @@ async def main():
     logger.info(f"Starting Kleinanzeigen Sniper v{app.__version__}")
 
     # Initialize KleinanzeigenClient singleton
-    KleinanzeigenClient.initialize(settings)
+    KleinanzeigenClient.get_instance()
 
     # Initialize bot and dispatcher
     bot = Bot(token=settings.BOT_TOKEN, default=DefaultBotProperties(
@@ -108,7 +105,7 @@ async def main():
     dp.shutdown.register(on_shutdown)
     
     # Start notifications task
-    # asyncio.create_task(scheduled_notifications(bot))
+    asyncio.create_task(scheduled_notifications(bot))
     
     # Start polling
     logger.info("Starting polling...")

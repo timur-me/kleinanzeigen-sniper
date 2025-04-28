@@ -46,6 +46,7 @@ class KleinanzeigenSeller:
 
 @dataclass
 class KleinanzeigenItem:
+    raw_data: dict
     id: Optional[str]
     title: Optional[str]
     price: KleinanzeigenItemPrice
