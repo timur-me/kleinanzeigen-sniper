@@ -36,7 +36,8 @@ class SearchSettings(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid4()))
     user_id: int
     item_name: str
-    location: str
+    location_id: str
+    location_name: str
     radius_km: int = 10
     is_active: bool = True
     created_at: datetime = Field(default_factory=datetime.now)
@@ -59,6 +60,9 @@ class SearchSettings(BaseModel):
         
         if v < 0:
             return 0
+        
+        if v > 500:
+            return 500
 
         return v
 

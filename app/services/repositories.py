@@ -22,6 +22,10 @@ class SearchSettingsRepository(JSONRepository[SearchSettings]):
     def __init__(self):
         super().__init__(settings.SEARCH_SETTINGS_FILE, SearchSettings)
     
+    def get_by_id(self, uuid: str) -> Optional[SearchSettings]:
+        """Get a search settings by its UUID."""
+        return next((s for s in self.get_all() if s.id == uuid), None)
+    
     def get_by_user_id(self, user_id: int) -> List[SearchSettings]:
         """Get all search settings for a specific user."""
         return [s for s in self.get_all() if s.user_id == user_id]

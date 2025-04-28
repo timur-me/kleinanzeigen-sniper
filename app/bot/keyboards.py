@@ -1,5 +1,10 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
 
+from app.kleinanzeigen.models import KleinanzeigenItemLocation
+
+from app.services.repositories import search_settings_repository
+
+
 
 # Main menu keyboard
 def get_main_menu() -> ReplyKeyboardMarkup:
@@ -46,6 +51,15 @@ def get_confirm_keyboard(action: str, entity_id: str) -> InlineKeyboardMarkup:
     ]
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
+# Locations keyboard
+def get_locations_keyboard(locations: list[KleinanzeigenItemLocation]) -> InlineKeyboardMarkup:
+    """Create keyboard for locations."""
+    keyboard = []
+    for location in locations:
+        keyboard.append([InlineKeyboardButton(text=location.zip_code_localized, callback_data=f"select_location:{location.id}:{location.zip_code_localized}")])
+    
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
 
 # Search list pagination keyboard
 def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: int = 5) -> InlineKeyboardMarkup:
@@ -56,12 +70,15 @@ def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: int = 5
     total_pages = (len(search_ids) + page_size - 1) // page_size
     start_idx = page * page_size
     end_idx = min(start_idx + page_size, len(search_ids))
-    
+
     # Add search buttons for current page
     for i in range(start_idx, end_idx):
         search_id = search_ids[i]
+        search_settings = search_settings_repository.get_by_id(search_id)
+        status_emoji = "✅" if search_settings.is_active else "❌"
+        search_name = search_settings.item_name
         keyboard.append([
-            InlineKeyboardButton(text=f"Search #{i+1}", callback_data=f"view_search:{search_id}")
+            InlineKeyboardButton(text=f"{status_emoji} {search_name}", callback_data=f"view_search:{search_id}")
         ])
     
     # Add pagination controls

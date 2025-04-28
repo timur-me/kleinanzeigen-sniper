@@ -106,6 +106,7 @@ class KleinanzeigenItemLocation(KleinanzeigenItemLocationType):
             self.longitude = self.__location_data.get("longitude", {}).get("value", None)
             self.latitude = self.__location_data.get("latitude", {}).get("value", None)
             self.radius = self.__location_data.get("radius", {}).get("value", None)
+            self.id = self.__location_data.get("id", None)
             regions = self.__location_data.get("regions", {}).get("region", [])
             if regions:
                 self.region = regions[0].get("localized-name", {}).get("value", None)
@@ -117,6 +118,7 @@ class KleinanzeigenItemLocation(KleinanzeigenItemLocationType):
             self.latitude = self.__ad_dict_raw.get("latitude", {}).get("value", None)
             self.radius = self.__ad_dict_raw.get("radius", {}).get("value", None)
             self.zip_code_localized = self.__ad_dict_raw.get("state", {}).get("value", None)
+            self.id = self.__ad_dict_raw.get("id", None)
             self.region = self.zip_code_localized
 
     def __str__(self) -> str:

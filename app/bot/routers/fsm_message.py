@@ -7,10 +7,12 @@ from app.bot.keyboards import (
     get_cancel_keyboard,
     get_confirm_keyboard,
     get_main_menu,
+    get_locations_keyboard
 )
 from app.models.models import SearchSettings
 from app.services.storage import search_settings_storage
 from app.bot.routers.states import AddSearchStates
+from app.kleinanzeigen.kleinanzeigen_client import KleinanzeigenClient
 
 fsm_router = Router()
 
@@ -39,22 +41,43 @@ async def process_item_name(message: Message, state: FSMContext):
 @fsm_router.message(AddSearchStates.waiting_for_location)
 async def process_location(message: Message, state: FSMContext):
     """Process location for new search."""
-    location = message.text.strip()
+    location_query = message.text.strip()
     
-    if not location:
+    if not location_query:
         await message.answer("Please enter a valid location.")
         return
     
-    # Save location in state
-    await state.update_data(location=location)
+    locations = await KleinanzeigenClient.get_instance().fetch_locations(location_query)
+    if not locations:
+        await message.answer("No locations found. Please try again.")
+        return
     
-    # Ask for radius
     await message.answer(
+        "Please select the location from the list or write a new location:",
+        reply_markup=get_locations_keyboard(locations)
+    )
+    
+    # await state.set_state(AddSearchStates.waiting_for_location_selection)
+
+
+@fsm_router.callback_query(F.data.startswith("select_location:"), AddSearchStates.waiting_for_location)
+async def process_location_selection(callback: CallbackQuery, state: FSMContext):
+    """Process location selection."""
+    location_id, location_name = callback.data.split(":")[1:3]
+
+    await state.update_data(location_id=location_id)
+    await state.update_data(location_name=location_name)
+
+    await callback.message.edit_text(f"Selected location: {location_name}")
+
+    await callback.message.answer(
         "Now enter the search radius in kilometers (e.g., 10):",
         reply_markup=get_cancel_keyboard()
     )
     
     await state.set_state(AddSearchStates.waiting_for_radius)
+    
+
 
 
 @fsm_router.message(AddSearchStates.waiting_for_radius)
@@ -80,7 +103,7 @@ async def process_radius(message: Message, state: FSMContext):
     confirmation_text = (
         f"📋 *Search Summary*\n\n"
         f"*Item:* {data['item_name']}\n"
-        f"*Location:* {data['location']}\n"
+        f"*Location:* {data['location_name']}\n"
         f"*Radius:* {data['radius_km']} km\n\n"
         f"Is this correct? If yes, I'll save this search and start monitoring for new listings."
     )
@@ -105,7 +128,8 @@ async def confirm_add_search(callback: CallbackQuery, state: FSMContext):
     search = SearchSettings(
         user_id=user_id,
         item_name=data["item_name"],
-        location=data["location"],
+        location_id=data["location_id"],
+        location_name=data["location_name"],
         radius_km=data["radius_km"]
     )
     
@@ -118,7 +142,7 @@ async def confirm_add_search(callback: CallbackQuery, state: FSMContext):
     await callback.message.edit_text(
         f"✅ Search saved successfully!\n\n"
         f"I'll start monitoring Kleinanzeigen for items matching '{search.item_name}' "
-        f"in {search.location} (radius: {search.radius_km} km)."
+        f"in {search.location_name} (radius: {search.radius_km} km)."
     )
     
     await callback.message.answer(

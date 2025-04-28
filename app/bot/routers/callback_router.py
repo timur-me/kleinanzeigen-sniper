@@ -4,6 +4,7 @@ from aiogram.types import CallbackQuery
 
 
 from app.bot.keyboards import (
+    get_confirm_keyboard,
     get_main_menu,
     get_search_list_keyboard,
     get_search_settings_keyboard,
@@ -48,7 +49,7 @@ async def cb_view_search(callback: CallbackQuery):
     search_details = (
         f"📊 *Search Details*\n\n"
         f"*Item:* {search.item_name}\n"
-        f"*Location:* {search.location}\n"
+        f"*Location:* {search.location_name}\n"
         f"*Radius:* {search.radius_km} km\n"
         f"*Status:* {status}\n"
         f"*Created:* {search.created_at.strftime('%Y-%m-%d')}"
@@ -138,7 +139,7 @@ async def cb_toggle_search(callback: CallbackQuery):
     search_details = (
         f"📊 *Search Details*\n\n"
         f"*Item:* {search.item_name}\n"
-        f"*Location:* {search.location}\n"
+        f"*Location:* {search.location_name}\n"
         f"*Radius:* {search.radius_km} km\n"
         f"*Status:* {status}\n"
         f"*Created:* {search.created_at.strftime('%Y-%m-%d')}"

@@ -37,7 +37,7 @@ class ScanService:
     
     async def process_search(self, search: SearchSettings):
         """Process a single search settings and create notifications for new items."""
-        logger.info(f"Processing search: {search.item_name} in {search.location}")
+        logger.info(f"Processing search: {search.item_name} in {search.location_name}")
         
         try:
             # Fetch items from Kleinanzeigen

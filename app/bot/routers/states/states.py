@@ -5,6 +5,7 @@ class AddSearchStates(StatesGroup):
     """States for adding a new search."""
     waiting_for_item_name = State()
     waiting_for_location = State()
+    waiting_for_location_selection = State()
     waiting_for_radius = State()
     confirmation = State()
 
@@ -14,4 +15,5 @@ class EditSearchStates(StatesGroup):
     waiting_for_field = State()
     waiting_for_item_name = State()
     waiting_for_location = State()
+    waiting_for_location_selection = State()
     waiting_for_radius = State()

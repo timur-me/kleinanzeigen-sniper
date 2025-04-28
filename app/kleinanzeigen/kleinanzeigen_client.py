@@ -7,7 +7,7 @@ from loguru import logger
 from app.models.models import SearchSettings
 from app.config.settings import settings
 
-from .models import KleinanzeigenItem
+from .models import KleinanzeigenItem, KleinanzeigenItemLocation
 from typing import List, Optional
 
 class KleinanzeigenClient:
@@ -28,6 +28,7 @@ class KleinanzeigenClient:
         }
         self.search_url = self.base_url + "/ads.json"
         self.detail_url = self.base_url + "/ads/{ad_id}.json"
+        self.location_url = self.base_url + "/locations.json"
 
     async def fetch_one_item(self, ad_id: str) -> Optional[KleinanzeigenItem]:
         response = await self._fetch(self.detail_url.format(ad_id=ad_id))
@@ -44,7 +45,9 @@ class KleinanzeigenClient:
         params = self.get_params(
             search_settings.item_name,
             page=0,
-            size=10
+            size=10,
+            location_id=search_settings.location_id,
+            distance=search_settings.radius_km
         )
 
         response = await self._fetch(self.search_url, params)
@@ -59,6 +62,24 @@ class KleinanzeigenClient:
         items = [KleinanzeigenItem(item) for item in response]
         return items
     
+    async def fetch_locations(self, query: str) -> Optional[List[KleinanzeigenItemLocation]]:
+        params = {
+            "depth": 1,
+            "q": query
+        }
+
+        response = await self._fetch(self.location_url, params)
+
+        if response is None:
+            return None
+        
+        response = response.get("{http://www.ebayclassifiedsgroup.com/schema/location/v1}locations", {}).get("value", {}).get("location", [])
+        if not response:
+            return None
+        
+        locations = [KleinanzeigenItemLocation(location) for location in response][:10]
+        return locations
+
     async def _fetch(self, url: str, params: dict = {}) -> dict:
         try:
             async with aiohttp.ClientSession() as session:
@@ -72,15 +93,17 @@ class KleinanzeigenClient:
             logger.error(f"Error fetching {url}: {e}")
             return None
         
-    def get_params(self, query:str, page:int=0, size:int=12, location_id:int=None, distance:int=None) -> dict:
+    def get_params(self, query:str, page:int=0, size:int=12, location_id:int=3331, distance:int=15) -> dict:
         # TODO: add adType, posterType for parameters
         params = {
             "_in": "id,title,description,displayoptions,start-date-time,category.id,category.localized_name,ad-address.state,ad-address.zip-code,ad-address.availability-radius-in-km,price,pictures,link,features-active,search-distance,negotiation-enabled,attributes,medias,medias.media,medias.media.title,medias.media.media-link,buy-now,placeholder-image-present,labels,price-reduction,store-id,store-title",
             "q": query,
             "page": str(page),
             "size": str(size),
+            "locationId": location_id,
+            "distance": distance,
             "pictureRequired": "false",
-            "includeTopAds": "true",
+            "includeTopAds": "false",
             "buyNowOnly": "false",
             "labelsGenerationEnabled": "true",
             "limitTotalResultCount": "true",

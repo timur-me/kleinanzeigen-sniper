@@ -2,16 +2,19 @@ from datetime import datetime
 from typing import Optional, List
 from dataclasses import dataclass
 
+
 @dataclass
 class KleinanzeigenItemPrice:
     currency: str
     amount: Optional[float]
     price_type: str
 
+
 @dataclass
 class KleinanzeigenItemCategory:
     id_name: Optional[str]
     localized_name: Optional[str]
+
 
 @dataclass
 class KleinanzeigenItemLocation:
@@ -21,6 +24,8 @@ class KleinanzeigenItemLocation:
     latitude: Optional[str]
     radius: Optional[str]
     region: Optional[str]
+    id: Optional[str]
+
 
 @dataclass
 class KleinanzeigenPicture:
@@ -30,6 +35,7 @@ class KleinanzeigenPicture:
     extra_large: Optional[str]
     xxl: Optional[str]
     canonical_url: Optional[str]
+
 
 @dataclass
 class KleinanzeigenSeller:
@@ -43,6 +49,7 @@ class KleinanzeigenSeller:
     phone: dict
     registration_date: Optional[datetime]
     registration_date_str: Optional[str]
+
 
 @dataclass
 class KleinanzeigenItem:
@@ -60,4 +67,4 @@ class KleinanzeigenItem:
     location: Optional[KleinanzeigenItemLocation]
     pictures: List[KleinanzeigenPicture]
     ad_link: Optional[str]
-    seller: KleinanzeigenSeller 
+    seller: KleinanzeigenSeller

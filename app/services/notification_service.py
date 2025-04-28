@@ -78,19 +78,11 @@ class NotificationService:
                     chat_id=user.user_id,
                     media=message_builder.message_media
                 )
-                
-                # Send keyboard separately
-                await bot.send_message(
-                    chat_id=user.user_id,
-                    text="Click below to view the item:",
-                    reply_markup=keyboard
-                )
             else:
                 # No media, send text only
                 await bot.send_message(
                     chat_id=user.user_id,
                     text=message_builder.message_text,
-                    reply_markup=keyboard,
                     parse_mode="Markdown"
                 )
             
