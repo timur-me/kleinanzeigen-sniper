@@ -1,5 +1,6 @@
 from aiogram import Bot
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import InputMediaPhoto
 from loguru import logger
 
 from app.models.models import Item, User
@@ -36,7 +37,7 @@ async def send_item_notification(bot: Bot, user: User, item: Item):
     """Send notification about a single item to a user."""
     # Create keyboard for the item
     keyboard = InlineKeyboardMarkup()
-    keyboard.add(InlineKeyboardButton("View on Kleinanzeigen", url=item.url))
+    keyboard.add(InlineKeyboardButton("Open in Kleinanzeigen", url=item.url))
     
     # Format price nicely if available
     price_str = f"💰 Price: {item.price}\n" if item.price else ""
@@ -51,7 +52,7 @@ async def send_item_notification(bot: Bot, user: User, item: Item):
     
     # Prepare message text
     message_text = (
-        f"🆕 *New Item Found!*\n\n"
+        f"🔍 *New Item Found!*\n\n"
         f"*{item.title}*\n\n"
         f"{price_str}"
         f"{location_str}"
@@ -59,22 +60,34 @@ async def send_item_notification(bot: Bot, user: User, item: Item):
     )
     
     try:
-        # If there are images, send the first one with the message
+        # If there are images, send them as a carousel
         if item.image_urls:
-            await bot.send_photo(
-                chat_id=user.user_id,
-                photo=item.image_urls[0],
-                caption=message_text,
-                reply_markup=keyboard,
-                parse_mode="Markdown"
-            )
+            # Create media group for carousel
+            media_group = []
             
-            # Send additional images if any (max 3 more)
-            for image_url in item.image_urls[1:4]:
-                await bot.send_photo(
-                    chat_id=user.user_id,
-                    photo=image_url
-                )
+            # Add first image with caption
+            for i, image_url in enumerate(item.image_urls[:10]):  # Limit to 10 images
+                if i == 0:
+                    # First image with caption
+                    media_group.attach(InputMediaPhoto(
+                        type="photo",
+                        media=image_url,
+                        caption=message_text,
+                        parse_mode="Markdown"
+                    ))
+                else:
+                    # Additional images without caption
+                    media_group.attach(InputMediaPhoto(media=image_url))
+            
+            # Send media group
+            await bot.send_media_group(chat_id=user.user_id, media=media_group)
+            
+            # Send the keyboard separately
+            await bot.send_message(
+                chat_id=user.user_id,
+                text="Click below to view the item:",
+                reply_markup=keyboard
+            )
         else:
             # No images, send text only
             await bot.send_message(

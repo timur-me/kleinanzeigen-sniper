@@ -5,7 +5,7 @@ from loguru import logger
 
 from app.config.settings import settings
 from app.models.models import Item, SearchSettings
-from app.services.scraper import scraper
+from backup_files.scraper import scraper
 from app.services.storage import item_storage, search_settings_storage
 
 

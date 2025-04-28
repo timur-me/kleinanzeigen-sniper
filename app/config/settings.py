@@ -22,7 +22,8 @@ class Settings(BaseSettings):
     ADMIN_USER_IDS: List[int]
     
     # Kleinanzeigen settings
-    KLEINANZEIGEN_BASE_URL: str = "https://www.kleinanzeigen.de"
+    KLEINANZEIGEN_API_URL: str = "https://www.kleinanzeigen.de"
+    KLEINANZEIGEN_AUTH_TOKEN: str = None
     REQUEST_INTERVAL: int = 30  # seconds
     USER_AGENTS_FILE: str = "user_agents.txt"
     

@@ -93,3 +93,14 @@ def get_cancel_keyboard() -> InlineKeyboardMarkup:
         ]
     ]
     return InlineKeyboardMarkup(inline_keyboard=keyboard) 
+
+def get_item_link_keyboard(item_url: str) -> InlineKeyboardMarkup:
+    """Create a keyboard with a button to open the item link."""
+    open_link_button = InlineKeyboardButton(text="Open in Kleinanzeigen", url=item_url)
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [open_link_button]
+        ]
+    )
+
+    return keyboard

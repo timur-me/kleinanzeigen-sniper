@@ -1,0 +1,487 @@
+{
+    "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad": {
+        "name": "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad",
+        "declaredType": "com.ebay.ecg.api.spec.v1.schema.ad.Ad",
+        "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+        "value": {
+            "ad-type": {
+                "value": "OFFERED"
+            },
+            "poster-type": {
+                "value": "COMMERCIAL"
+            },
+            "title": {
+                "value": "Servicekraft - Spielhallenaufsicht"
+            },
+            "description": {
+                "value": "Wir sind ein Spielstättenbetreiber mit diversen Standorten im Raum Thüringen&#x2F; Sachsen&#x2F; Sachsen-Anhalt&#x2F; Bayern\nund suchen zum nächstmöglichen Zeitpunkt Servicekräfte (m&#x2F;w&#x2F;d) in Vollzeit&#x2F; Teilzeit&#x2F; Minijobbasis\n\nWir bieten Ihnen:\n-einen sicheren Arbeitsplatz\n-pünktliche Bezahlung\n-unbefristeter Arbeitsvertrag\n-angenehme Arbeitsatmosphäre und ein tolles Team\n-Nacht Zuschlag\n-Aufstiegschancen\n-gemeinsame Teamevents\n\nIhr Aufgabengebiet umfasst:\n-Begrüßung und Betreuung der Gäste\n-Ansprechpartner für Fragen&#x2F;Anliegen der Gäste\n-reibungsloser Ablauf des Spielbetriebs\n-Überwachung gesetzlicher Bestimmungen\n-Einhaltung Spieler- und Jugendschutz\n-Sauberkeit&#x2F; Ordnung der Filiale\n-Kassenverwaltung und Geräteauffüllungen\n\nIhr Profil:\n-großer Teamgeist\n-Flexibilität\n-freundliches und sicheres Auftreten\n-gute Deutschkenntnisse\n-Bereitschaft für Schicht- und Wochenenarbeit\n-Erfahrung im Service oder Kundenkontakt wünschenswert\n-Mindestalter 18 Jahre (Aufgrund Einlasskontrollen)\n\nWir haben Ihr Interesse geweckt?\nDann treten Sie gerne mit uns in Kontakt:\nTelefonisch oder per WhatsApp: 0162&#x2F;4368943"
+            },
+            "description-content-type": {
+                "value": "text/plain"
+            },
+            "description-content-type-version": {
+                "value": "0"
+            },
+            "imprint": {
+                "value": "Haftungsausschluss:\r\n\r\nHaftung für Inhalte\r\n\r\nDie Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.\r\n\r\nHaftung für Links\r\n\r\nUnser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.\r\n\r\nUrheberrecht\r\n\r\nDie durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.\r\n\r\nDatenschutz\r\n\r\nDie Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.\r\n\r\nWir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.\r\n\r\nDer Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.\r\n\r\nDatenschutzerklärung für die Nutzung von Google Analytics\r\n\r\nDiese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (\"Google\"). Google Analytics verwendet sog. \"Cookies\", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Im Falle der Aktivierung der IP-Anonymisierung auf dieser Webseite wird Ihre IP-Adresse von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt.\r\n\r\nNur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen. Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt.\r\n\r\nSie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können. Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: http://tools.google.com/dlpage/gaoptout?hl=de.\r\n\r\nDatenschutzerklärung für die Nutzung von Google Adsense\r\n\r\nDiese Website benutzt Google AdSense, einen Dienst zum Einbinden von Werbeanzeigen der Google Inc. (\"Google\"). Google AdSense verwendet sog. \"Cookies\", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website ermöglicht. Google AdSense verwendet auch so genannte Web Beacons (unsichtbare Grafiken). Durch diese Web Beacons können Informationen wie der Besucherverkehr auf diesen Seiten ausgewertet werden.\r\n\r\nDie durch Cookies und Web Beacons erzeugten Informationen über die Benutzung dieser Website (einschließlich Ihrer IP-Adresse) und Auslieferung von Werbeformaten werden an einen Server von Google in den USA übertragen und dort gespeichert. Diese Informationen können von Google an Vertragspartner von Google weiter gegeben werden. Google wird Ihre IP-Adresse jedoch nicht mit anderen von Ihnen gespeicherten Daten zusammenführen.\r\n\r\nSie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.\r\n\r\nDatenschutzerklärung für die Nutzung von Google +1\r\n\r\nErfassung und Weitergabe von Informationen:Mithilfe der Google +1-Schaltfläche können Sie Informationen weltweit veröffentlichen. über die Google +1-Schaltfläche erhalten Sie und andere Nutzer personalisierte Inhalte von Google und unseren Partnern. Google speichert sowohl die Information, dass Sie für einen Inhalt +1 gegeben haben, als auch Informationen über die Seite, die Sie beim Klicken auf +1 angesehen haben. Ihre +1 können als Hinweise zusammen mit Ihrem Profilnamen und Ihrem Foto in Google-Diensten, wie etwa in Suchergebnissen oder in Ihrem Google-Profil, oder an anderen Stellen auf Websites und Anzeigen im Internet eingeblendet werden.Google zeichnet Informationen über Ihre +1-Aktivitäten auf, um die Google-Dienste für Sie und andere zu verbessern. Um die Google +1-Schaltfläche verwenden zu können, benötigen Sie ein weltweit sichtbares, öffentliches Google-Profil, das zumindest den für das Profil gewählten Namen enthalten muss. Dieser Name wird in allen Google-Diensten verwendet. In manchen Fällen kann dieser Name auch einen anderen Namen ersetzen, den Sie beim Teilen von Inhalten über Ihr Google-Konto verwendet haben. Die Identität Ihres Google-Profils kann Nutzern angezeigt werden, die Ihre E-Mail-Adresse kennen oder über andere identifizierende Informationen von Ihnen verfügen.Verwendung der erfassten Informationen:Neben den oben erläuterten Verwendungszwecken werden die von Ihnen bereitgestellten Informationen gemäß den geltenden Google-Datenschutzbestimmungen genutzt. Google veröffentlicht möglicherweise zusammengefasste Statistiken über die +1-Aktivitäten der Nutzer bzw. gibt diese an Nutzer und Partner weiter, wie etwa Publisher, Inserenten oder verbundene Websites.\r\n\r\nQuellenangaben: Disclaimer von eRecht24, dem Portal zum Internetrecht von Rechtsanwalt Sören Siebert, Datenschutzerklärung Google Analytics, Google Adsense Haftungsausschluss, Datenschutzerklärung für Google +1\r\n\r\nAngaben gemäß § 5 TMG:\r\n\r\nEasy Play Bavaria GmbH\r\n\r\nBayreuther Strasse 30\r\n\r\n95478 Kemnath\r\n\r\nKontakt: Vertreter Herr Bächer\r\n\r\nTelefon: +49 9642 8413\r\n\r\nE-Mail: easyplay@outlook.de\r\n\r\nHRB: 5895\r\n\r\nAufsichtsbehörde: Amtsgericht Weiden\r\n\r\nQuelle: Impressumgenerator von www.e-recht24.de."
+            },
+            "ad-address": {
+                "street": {
+                    "value": ""
+                },
+                "state": {
+                    "value": "Kemnath"
+                },
+                "zip-code": {
+                    "value": "95478"
+                },
+                "longitude": {
+                    "value": "11.8807"
+                },
+                "latitude": {
+                    "value": "49.8688"
+                },
+                "radius": {
+                    "value": "2.69"
+                },
+                "availability-radius-in-km": {}
+            },
+            "ad-status": {
+                "value": "ACTIVE"
+            },
+            "contact-name": {
+                "value": "Torsten Bächer"
+            },
+            "contact-name-initials": {
+                "value": "TB"
+            },
+            "user-id": {
+                "value": "133975201"
+            },
+            "store-id": {
+                "value": "176959"
+            },
+            "seller-account-type": {
+                "value": "PRO"
+            },
+            "user-rating": {
+                "averageRating": {
+                    "value": 0.5
+                }
+            },
+            "userBadges": {
+                "badges": [
+                    {
+                        "name": "rating",
+                        "level": "1",
+                        "value": ""
+                    },
+                    {
+                        "name": "friendliness",
+                        "level": "1",
+                        "value": ""
+                    },
+                    {
+                        "name": "reliability",
+                        "level": "0",
+                        "value": ""
+                    }
+                ]
+            },
+            "placeholder-image-present": {
+                "value": "false"
+            },
+            "ad-source-id": {},
+            "ad-external-reference-id": {},
+            "phone": {},
+            "originId": {
+                "value": "0"
+            },
+            "start-date-time": {
+                "value": "2025-04-28T13:11:25.000+0200"
+            },
+            "user-since-date-time": {
+                "value": "2023-09-21T15:46:17.000+0200"
+            },
+            "last-user-edit-date": {
+                "value": "2025-04-28T13:11:18.000+0200"
+            },
+            "features-active": {
+                "feature-active": []
+            },
+            "category": {
+                "id-name": {
+                    "value": "Gastronomie_Tourismus"
+                },
+                "localized-name": {
+                    "value": "Gastronomie & Tourismus"
+                },
+                "link": [],
+                "category": [],
+                "parent-id": {
+                    "value": "102"
+                },
+                "has-fake-sub-category": {
+                    "value": "true"
+                },
+                "id": "110"
+            },
+            "locations": {
+                "location": [
+                    {
+                        "id-name": {
+                            "value": "95478"
+                        },
+                        "localized-name": {
+                            "value": "95478 Kemnath"
+                        },
+                        "longitude": {
+                            "value": "11.90712"
+                        },
+                        "latitude": {
+                            "value": "49.87561"
+                        },
+                        "radius": {
+                            "value": "2.69"
+                        },
+                        "regions": {
+                            "region": [
+                                {
+                                    "localized-name": {
+                                        "value": "Bayern"
+                                    }
+                                }
+                            ],
+                            "localized-label": "Bundesland"
+                        },
+                        "location": [],
+                        "parent-id": {
+                            "value": "10766"
+                        },
+                        "children-count": {
+                            "value": "0"
+                        },
+                        "id": "7002"
+                    }
+                ]
+            },
+            "buy-now": {
+                "selected": "false"
+            },
+            "attributes": {
+                "attribute": [
+                    {
+                        "value": [
+                            {
+                                "value": "servicekraft",
+                                "localized-label": "Servicekraft"
+                            }
+                        ],
+                        "name": "gastronomie_tourismus.art",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "true",
+                        "search-multi-select": "true",
+                        "type": "ENUM",
+                        "localized-label": "Art"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "without_work_experience",
+                                "localized-label": "Ohne Berufserfahrung"
+                            }
+                        ],
+                        "name": "gastronomie_tourismus.work_experience",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "false",
+                        "type": "ENUM",
+                        "localized-label": "Berufserfahrung"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "full_time",
+                                "localized-label": "Vollzeit"
+                            }
+                        ],
+                        "name": "gastronomie_tourismus.working_hours",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "false",
+                        "type": "ENUM",
+                        "localized-label": "Arbeitszeit"
+                    }
+                ]
+            },
+            "link": [
+                {
+                    "href": "http://api.kleinanzeigen.de/api/ads/3070239100",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://api.kleinanzeigen.de/api/users/133975201/ads/3070239100",
+                    "rel": "self-user"
+                },
+                {
+                    "href": "https://www.kleinanzeigen.de/s-anzeige/servicekraft-spielhallenaufsicht/3070239100-110-7002",
+                    "rel": "self-public-website"
+                }
+            ],
+            "pictures": {
+                "picture": [
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/82/82901c43-9525-4ab5-bfa0-2acd33c55857?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/82/82901c43-9525-4ab5-bfa0-2acd33c55857?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/82/82901c43-9525-4ab5-bfa0-2acd33c55857?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/82/82901c43-9525-4ab5-bfa0-2acd33c55857?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/82/82901c43-9525-4ab5-bfa0-2acd33c55857?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/82/82901c43-9525-4ab5-bfa0-2acd33c55857?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/57/57f79796-3709-4268-897d-94cab60631c8?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/57/57f79796-3709-4268-897d-94cab60631c8?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/57/57f79796-3709-4268-897d-94cab60631c8?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/57/57f79796-3709-4268-897d-94cab60631c8?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/57/57f79796-3709-4268-897d-94cab60631c8?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/57/57f79796-3709-4268-897d-94cab60631c8?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c23a0fbb-bf58-40ac-b37e-4ec796163ee3?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c23a0fbb-bf58-40ac-b37e-4ec796163ee3?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c23a0fbb-bf58-40ac-b37e-4ec796163ee3?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c23a0fbb-bf58-40ac-b37e-4ec796163ee3?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c23a0fbb-bf58-40ac-b37e-4ec796163ee3?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c23a0fbb-bf58-40ac-b37e-4ec796163ee3?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/48/485d3d56-16a0-4b60-8bf2-80a48185cf2b?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/48/485d3d56-16a0-4b60-8bf2-80a48185cf2b?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/48/485d3d56-16a0-4b60-8bf2-80a48185cf2b?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/48/485d3d56-16a0-4b60-8bf2-80a48185cf2b?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/48/485d3d56-16a0-4b60-8bf2-80a48185cf2b?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/48/485d3d56-16a0-4b60-8bf2-80a48185cf2b?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/d2/d2283148-27cc-4017-903f-0a713aa52e94?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/d2/d2283148-27cc-4017-903f-0a713aa52e94?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/d2/d2283148-27cc-4017-903f-0a713aa52e94?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/d2/d2283148-27cc-4017-903f-0a713aa52e94?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/d2/d2283148-27cc-4017-903f-0a713aa52e94?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/d2/d2283148-27cc-4017-903f-0a713aa52e94?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eae1e48-eec5-4207-acb4-f9bcae584e2b?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eae1e48-eec5-4207-acb4-f9bcae584e2b?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eae1e48-eec5-4207-acb4-f9bcae584e2b?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eae1e48-eec5-4207-acb4-f9bcae584e2b?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eae1e48-eec5-4207-acb4-f9bcae584e2b?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/2e/2eae1e48-eec5-4207-acb4-f9bcae584e2b?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "documents": {
+                "document": []
+            },
+            "displayoptions": {
+                "reduced-ads-on-vip": {
+                    "value": "true"
+                },
+                "hide-ads-on-vip": {
+                    "value": "false"
+                },
+                "show-ratings": {
+                    "value": "true"
+                },
+                "ad-flagging-enabled": {
+                    "value": "true"
+                },
+                "hide-similard-ads-on-vip": {
+                    "value": "true"
+                },
+                "category-change-allowed": {
+                    "value": "true"
+                },
+                "offer-allowed": {
+                    "value": "false"
+                },
+                "secure-payment-possible": {
+                    "value": "false"
+                },
+                "ad-description-formatting-enabled": {
+                    "value": "false"
+                },
+                "ad-documents-upload-enabled": {
+                    "value": "false"
+                },
+                "display-map-on-vip": {
+                    "value": "false"
+                },
+                "licence-plate-blurring-enabled": {
+                    "value": "false"
+                },
+                "contact-poster-feedback": "",
+                "lead-generation-target": {
+                    "value": "false"
+                },
+                "enable-image-titles": {
+                    "value": "false"
+                },
+                "eligible-for-call-tracking": {
+                    "value": "false"
+                },
+                "contact-button-on-vip": {
+                    "value": "true",
+                    "action": {
+                        "type": "Conversation",
+                        "data": ""
+                    }
+                }
+            },
+            "tracking": {
+                "user-account-type": {
+                    "value": "commercial_propower"
+                }
+            },
+            "medias": {
+                "media": []
+            },
+            "financing-eligible": {
+                "value": "false"
+            },
+            "re-financing-eligible": {
+                "value": "false"
+            },
+            "otherAttributes": {},
+            "id": "3070239100",
+            "version": "1.16",
+            "locale": "de_DE"
+        },
+        "nil": false,
+        "globalScope": true,
+        "typeSubstituted": true
+    }
+}

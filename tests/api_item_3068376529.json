@@ -1,0 +1,612 @@
+{
+    "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad": {
+        "name": "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad",
+        "declaredType": "com.ebay.ecg.api.spec.v1.schema.ad.Ad",
+        "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+        "value": {
+            "price": {
+                "currency-iso-code": {
+                    "value": {
+                        "value": "EUR",
+                        "localized-label": "€"
+                    }
+                },
+                "amount": {
+                    "value": 260.0
+                },
+                "price-type": {
+                    "value": "PLEASE_CONTACT"
+                }
+            },
+            "ad-type": {
+                "value": "OFFERED"
+            },
+            "poster-type": {
+                "value": "PRIVATE"
+            },
+            "title": {
+                "value": "Ray-Ban | META WAYFARER 0RW4006  Transition Sapphire"
+            },
+            "description": {
+                "value": "Ray-Ban Meta Wayfarer Brille in glänzend Schwarz<br /><br />Neu mit Etui und Tuch"
+            },
+            "description-content-type": {
+                "value": "text/plain"
+            },
+            "description-content-type-version": {
+                "value": "0"
+            },
+            "imprint": {},
+            "ad-address": {
+                "street": {
+                    "value": ""
+                },
+                "state": {
+                    "value": "Butzbach"
+                },
+                "zip-code": {
+                    "value": "35510"
+                },
+                "longitude": {
+                    "value": "8.630666"
+                },
+                "latitude": {
+                    "value": "50.421593"
+                },
+                "radius": {
+                    "value": "4.52"
+                },
+                "availability-radius-in-km": {}
+            },
+            "ad-status": {
+                "value": "ACTIVE"
+            },
+            "contact-name": {
+                "value": "Wydad24"
+            },
+            "contact-name-initials": {
+                "value": "W"
+            },
+            "user-id": {
+                "value": "136906628"
+            },
+            "store-id": {},
+            "seller-account-type": {
+                "value": "PRIVATE"
+            },
+            "user-rating": {
+                "averageRating": {
+                    "value": 0.675
+                }
+            },
+            "userBadges": {
+                "badges": [
+                    {
+                        "name": "rating",
+                        "level": "2",
+                        "value": ""
+                    },
+                    {
+                        "name": "friendliness",
+                        "level": "1",
+                        "value": ""
+                    },
+                    {
+                        "name": "reliability",
+                        "level": "0",
+                        "value": ""
+                    }
+                ]
+            },
+            "placeholder-image-present": {
+                "value": "false"
+            },
+            "ad-source-id": {
+                "value": "8"
+            },
+            "ad-external-reference-id": {},
+            "phone": {},
+            "originId": {
+                "value": "8"
+            },
+            "start-date-time": {
+                "value": "2025-04-26T14:56:12.000+0200"
+            },
+            "user-since-date-time": {
+                "value": "2024-01-06T00:09:02.000+0100"
+            },
+            "last-user-edit-date": {
+                "value": "2025-04-26T14:56:11.000+0200"
+            },
+            "features-active": {
+                "feature-active": []
+            },
+            "category": {
+                "id-name": {
+                    "value": "Accessoires_Schmuck"
+                },
+                "localized-name": {
+                    "value": "Taschen & Accessoires"
+                },
+                "link": [],
+                "category": [],
+                "parent-id": {
+                    "value": "153"
+                },
+                "has-fake-sub-category": {
+                    "value": "true"
+                },
+                "id": "156"
+            },
+            "locations": {
+                "location": [
+                    {
+                        "id-name": {
+                            "value": "35510"
+                        },
+                        "localized-name": {
+                            "value": "35510 Butzbach"
+                        },
+                        "longitude": {
+                            "value": "8.630666"
+                        },
+                        "latitude": {
+                            "value": "50.421593"
+                        },
+                        "radius": {
+                            "value": "4.52"
+                        },
+                        "regions": {
+                            "region": [
+                                {
+                                    "localized-name": {
+                                        "value": "Hessen"
+                                    }
+                                }
+                            ],
+                            "localized-label": "Bundesland"
+                        },
+                        "location": [],
+                        "parent-id": {
+                            "value": "4725"
+                        },
+                        "children-count": {
+                            "value": "0"
+                        },
+                        "id": "4727"
+                    }
+                ]
+            },
+            "shipping-options": {
+                "shipping-option": [
+                    {
+                        "id": "DHL_001"
+                    },
+                    {
+                        "id": "HERMES_001"
+                    },
+                    {
+                        "id": "HERMES_002"
+                    }
+                ]
+            },
+            "buy-now": {
+                "selected": "false"
+            },
+            "attributes": {
+                "attribute": [
+                    {
+                        "value": [
+                            {
+                                "value": "sonnenbrillen",
+                                "localized-label": "Sonnenbrillen"
+                            }
+                        ],
+                        "name": "accessoires_schmuck.art",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "true",
+                        "search-multi-select": "true",
+                        "type": "ENUM",
+                        "localized-label": "Art"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "ja",
+                                "localized-label": "ab 4,89"
+                            }
+                        ],
+                        "name": "accessoires_schmuck.versand",
+                        "unit": "€",
+                        "search-display": "true",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "false",
+                        "localized-tag": "Versand möglich",
+                        "type": "ENUM",
+                        "localized-label": "Versand"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "new",
+                                "localized-label": "Neu"
+                            }
+                        ],
+                        "name": "accessoires_schmuck.condition",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "true",
+                        "type": "ENUM",
+                        "localized-label": "Zustand"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "schwarz",
+                                "localized-label": "Schwarz"
+                            }
+                        ],
+                        "name": "accessoires_schmuck.color",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "true",
+                        "type": "ENUM",
+                        "localized-label": "Farbe"
+                    }
+                ]
+            },
+            "link": [
+                {
+                    "href": "http://api.kleinanzeigen.de/api/ads/3068376529",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://api.kleinanzeigen.de/api/users/136906628/ads/3068376529",
+                    "rel": "self-user"
+                },
+                {
+                    "href": "https://www.kleinanzeigen.de/s-anzeige/ray-ban-meta-wayfarer-0rw4006-transition-sapphire/3068376529-156-4727",
+                    "rel": "self-public-website"
+                }
+            ],
+            "pictures": {
+                "picture": [
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7c/7c3aabff-7d69-4be8-987a-2566187ffeda?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7c/7c3aabff-7d69-4be8-987a-2566187ffeda?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7c/7c3aabff-7d69-4be8-987a-2566187ffeda?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7c/7c3aabff-7d69-4be8-987a-2566187ffeda?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7c/7c3aabff-7d69-4be8-987a-2566187ffeda?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7c/7c3aabff-7d69-4be8-987a-2566187ffeda?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/5b/5b9a3fc2-acac-4a6d-bc9f-795ecc852e6a?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/5b/5b9a3fc2-acac-4a6d-bc9f-795ecc852e6a?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/5b/5b9a3fc2-acac-4a6d-bc9f-795ecc852e6a?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/5b/5b9a3fc2-acac-4a6d-bc9f-795ecc852e6a?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/5b/5b9a3fc2-acac-4a6d-bc9f-795ecc852e6a?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/5b/5b9a3fc2-acac-4a6d-bc9f-795ecc852e6a?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/6447f633-0f30-42bd-928e-56a62b0ce509?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/6447f633-0f30-42bd-928e-56a62b0ce509?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/6447f633-0f30-42bd-928e-56a62b0ce509?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/6447f633-0f30-42bd-928e-56a62b0ce509?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/6447f633-0f30-42bd-928e-56a62b0ce509?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/6447f633-0f30-42bd-928e-56a62b0ce509?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4afce98b-2f61-4873-b4f9-e8fc601c57da?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4afce98b-2f61-4873-b4f9-e8fc601c57da?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4afce98b-2f61-4873-b4f9-e8fc601c57da?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4afce98b-2f61-4873-b4f9-e8fc601c57da?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4afce98b-2f61-4873-b4f9-e8fc601c57da?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4afce98b-2f61-4873-b4f9-e8fc601c57da?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/db/db674aa8-29bd-4e89-8e08-25a31f5917fb?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/db/db674aa8-29bd-4e89-8e08-25a31f5917fb?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/db/db674aa8-29bd-4e89-8e08-25a31f5917fb?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/db/db674aa8-29bd-4e89-8e08-25a31f5917fb?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/db/db674aa8-29bd-4e89-8e08-25a31f5917fb?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/db/db674aa8-29bd-4e89-8e08-25a31f5917fb?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/49/493070cb-bd4b-4f54-9ca4-883247eb5299?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/49/493070cb-bd4b-4f54-9ca4-883247eb5299?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/49/493070cb-bd4b-4f54-9ca4-883247eb5299?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/49/493070cb-bd4b-4f54-9ca4-883247eb5299?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/49/493070cb-bd4b-4f54-9ca4-883247eb5299?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/49/493070cb-bd4b-4f54-9ca4-883247eb5299?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/17/17dd5440-1b32-4c2a-8fdf-8ff83ea091ce?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/17/17dd5440-1b32-4c2a-8fdf-8ff83ea091ce?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/17/17dd5440-1b32-4c2a-8fdf-8ff83ea091ce?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/17/17dd5440-1b32-4c2a-8fdf-8ff83ea091ce?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/17/17dd5440-1b32-4c2a-8fdf-8ff83ea091ce?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/17/17dd5440-1b32-4c2a-8fdf-8ff83ea091ce?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/af/af6fc13a-4580-4db6-9ff4-eee15268a024?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/af/af6fc13a-4580-4db6-9ff4-eee15268a024?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/af/af6fc13a-4580-4db6-9ff4-eee15268a024?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/af/af6fc13a-4580-4db6-9ff4-eee15268a024?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/af/af6fc13a-4580-4db6-9ff4-eee15268a024?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/af/af6fc13a-4580-4db6-9ff4-eee15268a024?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/dc/dc9bd8af-bae1-4747-a2ef-7b919ebe21a9?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/dc/dc9bd8af-bae1-4747-a2ef-7b919ebe21a9?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/dc/dc9bd8af-bae1-4747-a2ef-7b919ebe21a9?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/dc/dc9bd8af-bae1-4747-a2ef-7b919ebe21a9?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/dc/dc9bd8af-bae1-4747-a2ef-7b919ebe21a9?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/dc/dc9bd8af-bae1-4747-a2ef-7b919ebe21a9?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "documents": {
+                "document": []
+            },
+            "displayoptions": {
+                "reduced-ads-on-vip": {
+                    "value": "false"
+                },
+                "hide-ads-on-vip": {
+                    "value": "false"
+                },
+                "show-ratings": {
+                    "value": "true"
+                },
+                "ad-flagging-enabled": {
+                    "value": "true"
+                },
+                "hide-similard-ads-on-vip": {
+                    "value": "false"
+                },
+                "category-change-allowed": {
+                    "value": "true"
+                },
+                "offer-allowed": {
+                    "value": "false"
+                },
+                "secure-payment-possible": {
+                    "value": "false"
+                },
+                "ad-description-formatting-enabled": {
+                    "value": "false"
+                },
+                "ad-documents-upload-enabled": {
+                    "value": "false"
+                },
+                "display-map-on-vip": {
+                    "value": "false"
+                },
+                "licence-plate-blurring-enabled": {
+                    "value": "false"
+                },
+                "contact-poster-feedback": "",
+                "lead-generation-target": {
+                    "value": "false"
+                },
+                "enable-image-titles": {
+                    "value": "false"
+                },
+                "eligible-for-call-tracking": {
+                    "value": "false"
+                },
+                "contact-button-on-vip": {
+                    "value": "true",
+                    "action": {
+                        "type": "Conversation",
+                        "data": ""
+                    }
+                }
+            },
+            "tracking": {
+                "user-account-type": {
+                    "value": "private"
+                }
+            },
+            "medias": {
+                "media": []
+            },
+            "financing-eligible": {
+                "value": "false"
+            },
+            "re-financing-eligible": {
+                "value": "false"
+            },
+            "otherAttributes": {},
+            "id": "3068376529",
+            "version": "1.16",
+            "locale": "de_DE"
+        },
+        "nil": false,
+        "globalScope": true,
+        "typeSubstituted": true
+    }
+}

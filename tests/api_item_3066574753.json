@@ -1,0 +1,348 @@
+{
+    "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad": {
+        "name": "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad",
+        "declaredType": "com.ebay.ecg.api.spec.v1.schema.ad.Ad",
+        "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+        "value": {
+            "price": {
+                "currency-iso-code": {
+                    "value": {
+                        "value": "EUR",
+                        "localized-label": "€"
+                    }
+                },
+                "amount": {},
+                "price-type": {
+                    "value": "PLEASE_CONTACT"
+                }
+            },
+            "ad-type": {
+                "value": "WANTED"
+            },
+            "poster-type": {
+                "value": "PRIVATE"
+            },
+            "title": {
+                "value": "SUCHE ! DJI Osmo Action 5"
+            },
+            "description": {
+                "value": "Moin... Suche auf diesen Wege eine DJI Osmo Action 5.<br /><br />Zubehör sollte komplett sein, ebenso sollte sie voll funktionsfähig sein, keine Kratzer auf dem Displays haben ...<br /><br />Gern mit Preisvorstellung und Fotos bei mir melden !<br />Danke"
+            },
+            "description-content-type": {
+                "value": "text/plain"
+            },
+            "description-content-type-version": {
+                "value": "0"
+            },
+            "imprint": {},
+            "ad-address": {
+                "street": {
+                    "value": ""
+                },
+                "state": {
+                    "value": "Reinickendorf"
+                },
+                "zip-code": {
+                    "value": "13439"
+                },
+                "longitude": {
+                    "value": "13.364106"
+                },
+                "latitude": {
+                    "value": "52.59939"
+                },
+                "radius": {
+                    "value": "1.51"
+                },
+                "availability-radius-in-km": {}
+            },
+            "ad-status": {
+                "value": "ACTIVE"
+            },
+            "contact-name": {
+                "value": "NP"
+            },
+            "contact-name-initials": {
+                "value": "N"
+            },
+            "user-id": {
+                "value": "462659"
+            },
+            "store-id": {},
+            "seller-account-type": {
+                "value": "PRIVATE"
+            },
+            "user-rating": {
+                "averageRating": {
+                    "value": 0.7045454545454546
+                }
+            },
+            "userBadges": {
+                "badges": [
+                    {
+                        "name": "rating",
+                        "level": "2",
+                        "value": ""
+                    }
+                ]
+            },
+            "placeholder-image-present": {
+                "value": "false"
+            },
+            "ad-source-id": {
+                "value": "8"
+            },
+            "ad-external-reference-id": {},
+            "phone": {},
+            "originId": {
+                "value": "8"
+            },
+            "start-date-time": {
+                "value": "2025-04-24T15:27:08.000+0200"
+            },
+            "user-since-date-time": {
+                "value": "2009-09-01T11:42:16.000+0200"
+            },
+            "last-user-edit-date": {
+                "value": "2025-04-24T15:27:06.000+0200"
+            },
+            "features-active": {
+                "feature-active": []
+            },
+            "category": {
+                "id-name": {
+                    "value": "Foto"
+                },
+                "localized-name": {
+                    "value": "Foto"
+                },
+                "link": [],
+                "category": [],
+                "parent-id": {
+                    "value": "161"
+                },
+                "has-fake-sub-category": {
+                    "value": "true"
+                },
+                "id": "245"
+            },
+            "locations": {
+                "location": [
+                    {
+                        "id-name": {
+                            "value": "13439"
+                        },
+                        "localized-name": {
+                            "value": "13439 Reinickendorf"
+                        },
+                        "longitude": {
+                            "value": "13.364106"
+                        },
+                        "latitude": {
+                            "value": "52.59939"
+                        },
+                        "radius": {
+                            "value": "1.51"
+                        },
+                        "regions": {
+                            "region": [
+                                {
+                                    "localized-name": {
+                                        "value": "Berlin"
+                                    }
+                                }
+                            ],
+                            "localized-label": "Bundesland"
+                        },
+                        "location": [],
+                        "parent-id": {
+                            "value": "3450"
+                        },
+                        "children-count": {
+                            "value": "0"
+                        },
+                        "id": "3459"
+                    }
+                ]
+            },
+            "buy-now": {
+                "selected": "false"
+            },
+            "attributes": {
+                "attribute": [
+                    {
+                        "value": [
+                            {
+                                "value": "camera",
+                                "localized-label": "Kamera"
+                            }
+                        ],
+                        "name": "foto.art",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "true",
+                        "search-multi-select": "true",
+                        "type": "ENUM",
+                        "localized-label": "Art"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "ja",
+                                "localized-label": "Versand möglich"
+                            }
+                        ],
+                        "name": "foto.versand",
+                        "unit": "",
+                        "search-display": "true",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "false",
+                        "localized-tag": "Versand möglich",
+                        "type": "ENUM",
+                        "localized-label": "Versand"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "like_new",
+                                "localized-label": "Sehr Gut"
+                            }
+                        ],
+                        "name": "foto.condition",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "true",
+                        "type": "ENUM",
+                        "localized-label": "Zustand"
+                    }
+                ]
+            },
+            "link": [
+                {
+                    "href": "https://api.kleinanzeigen.de:443/api/ads/3066574753",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://api.kleinanzeigen.de:443/api/users/462659/ads/3066574753",
+                    "rel": "self-user"
+                },
+                {
+                    "href": "https://www.kleinanzeigen.de/s-anzeige/suche-dji-osmo-action-5/3066574753-245-3459",
+                    "rel": "self-public-website"
+                }
+            ],
+            "pictures": {
+                "picture": [
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7a/7af98407-2253-497c-a4ec-4841a85327e5?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7a/7af98407-2253-497c-a4ec-4841a85327e5?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7a/7af98407-2253-497c-a4ec-4841a85327e5?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7a/7af98407-2253-497c-a4ec-4841a85327e5?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7a/7af98407-2253-497c-a4ec-4841a85327e5?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/7a/7af98407-2253-497c-a4ec-4841a85327e5?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "documents": {
+                "document": []
+            },
+            "displayoptions": {
+                "reduced-ads-on-vip": {
+                    "value": "false"
+                },
+                "hide-ads-on-vip": {
+                    "value": "false"
+                },
+                "show-ratings": {
+                    "value": "true"
+                },
+                "ad-flagging-enabled": {
+                    "value": "true"
+                },
+                "hide-similard-ads-on-vip": {
+                    "value": "false"
+                },
+                "category-change-allowed": {
+                    "value": "true"
+                },
+                "offer-allowed": {
+                    "value": "false"
+                },
+                "secure-payment-possible": {
+                    "value": "false"
+                },
+                "ad-description-formatting-enabled": {
+                    "value": "false"
+                },
+                "ad-documents-upload-enabled": {
+                    "value": "false"
+                },
+                "display-map-on-vip": {
+                    "value": "false"
+                },
+                "licence-plate-blurring-enabled": {
+                    "value": "false"
+                },
+                "contact-poster-feedback": "",
+                "lead-generation-target": {
+                    "value": "false"
+                },
+                "enable-image-titles": {
+                    "value": "false"
+                },
+                "eligible-for-call-tracking": {
+                    "value": "false"
+                },
+                "contact-button-on-vip": {
+                    "value": "true",
+                    "action": {
+                        "type": "Conversation",
+                        "data": ""
+                    }
+                }
+            },
+            "tracking": {
+                "user-account-type": {
+                    "value": "private"
+                }
+            },
+            "medias": {
+                "media": []
+            },
+            "financing-eligible": {
+                "value": "false"
+            },
+            "re-financing-eligible": {
+                "value": "false"
+            },
+            "otherAttributes": {},
+            "id": "3066574753",
+            "version": "1.16",
+            "locale": "de_DE"
+        },
+        "nil": false,
+        "globalScope": true,
+        "typeSubstituted": true
+    }
+}

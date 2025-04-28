@@ -74,3 +74,4 @@ class UserAccessMiddleware(BaseMiddleware):
         
         # Continue processing
         return await handler(event, data) 
+    

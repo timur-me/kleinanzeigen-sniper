@@ -7,12 +7,23 @@ from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import BotCommand
 
-from app.bot.handlers import router as handlers_router
+from app.bot.routers import main_router as handlers_router
+from app.bot.routers import help_router
+
+from app.bot.routers import (
+    help_router,
+    start_router,
+    keyboard_router,
+    link_router,
+    callback_router,
+    fsm_router, 
+)
 from app.bot.middlewares import UserAccessMiddleware
 from app.bot.notifications import send_item_notifications
 from app.config.settings import settings
 from app.utils.logging import setup_logging
 from app.workers.parsing_worker import parsing_worker
+from app.kleinanzeigen.kleinanzeigen_client import KleinanzeigenClient
 
 # Set up logging
 logger = setup_logging()
@@ -21,10 +32,12 @@ logger = setup_logging()
 async def on_startup(bot: Bot):
     """Execute actions on bot startup."""
     logger.info("Bot is starting up...")
+
+    # TODO: REWORK THIS parsing worker.
     
-    # Start parsing worker
-    logger.info("Starting parsing worker...")
-    parsing_worker.start()
+    # # Start parsing worker
+    # logger.info("Starting parsing worker...")
+    # parsing_worker.start()
     
     # Set up commands
     await bot.set_my_commands([
@@ -42,9 +55,9 @@ async def on_shutdown(bot: Bot):
     """Execute actions on bot shutdown."""
     logger.info("Bot is shutting down...")
     
-    # Stop parsing worker
-    logger.info("Stopping parsing worker...")
-    parsing_worker.stop()
+    # # Stop parsing worker
+    # logger.info("Stopping parsing worker...")
+    # parsing_worker.stop()
     
     logger.info("Bot shutdown completed.")
 
@@ -68,6 +81,9 @@ async def main():
     
     logger.info(f"Starting Kleinanzeigen Sniper v{app.__version__}")
 
+    # Initialize KleinanzeigenClient singleton
+    KleinanzeigenClient.initialize(settings)
+
     # Initialize bot and dispatcher
     bot = Bot(token=settings.BOT_TOKEN, default=DefaultBotProperties(
         parse_mode=ParseMode.HTML
@@ -78,14 +94,21 @@ async def main():
     dp.message.middleware(UserAccessMiddleware())
     
     # Register routers
-    dp.include_router(handlers_router)
+    dp.include_routers(
+        start_router,
+        help_router,
+        keyboard_router,
+        link_router,
+        fsm_router,
+        callback_router
+    )
     
     # Set up event handlers
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
     
     # Start notifications task
-    asyncio.create_task(scheduled_notifications(bot))
+    # asyncio.create_task(scheduled_notifications(bot))
     
     # Start polling
     logger.info("Starting polling...")

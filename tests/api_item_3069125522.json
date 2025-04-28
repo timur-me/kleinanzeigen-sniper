@@ -1,0 +1,470 @@
+{
+    "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad": {
+        "name": "{http://www.ebayclassifiedsgroup.com/schema/ad/v1}ad",
+        "declaredType": "com.ebay.ecg.api.spec.v1.schema.ad.Ad",
+        "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+        "value": {
+            "price": {
+                "currency-iso-code": {
+                    "value": {
+                        "value": "EUR",
+                        "localized-label": "€"
+                    }
+                },
+                "amount": {
+                    "value": 40.0
+                },
+                "price-type": {
+                    "value": "SPECIFIED_AMOUNT"
+                }
+            },
+            "ad-type": {
+                "value": "OFFERED"
+            },
+            "poster-type": {
+                "value": "PRIVATE"
+            },
+            "title": {
+                "value": "Canonet 28 Canon Kleinbildkamera 35mm analog Kamera"
+            },
+            "description": {
+                "value": "Steht seit Jahren unbenutzt im Schrank und darf nun weiterziehen. Hat zuletzt noch zuverlässig fotografiert und schöne Bilder gemacht. Batterie müsste wahrscheinlich ausgetauscht werden."
+            },
+            "description-content-type": {
+                "value": "text/plain"
+            },
+            "description-content-type-version": {
+                "value": "0"
+            },
+            "imprint": {},
+            "ad-address": {
+                "street": {
+                    "value": ""
+                },
+                "state": {
+                    "value": "Rummelsburg"
+                },
+                "zip-code": {
+                    "value": "10317"
+                },
+                "longitude": {
+                    "value": "13.486727"
+                },
+                "latitude": {
+                    "value": "52.502438"
+                },
+                "radius": {
+                    "value": "5.0"
+                },
+                "availability-radius-in-km": {}
+            },
+            "ad-status": {
+                "value": "ACTIVE"
+            },
+            "contact-name": {
+                "value": "Jeannette"
+            },
+            "contact-name-initials": {
+                "value": "J"
+            },
+            "user-id": {
+                "value": "19668562"
+            },
+            "store-id": {},
+            "seller-account-type": {
+                "value": "PRIVATE"
+            },
+            "user-rating": {
+                "averageRating": {
+                    "value": 1.0
+                }
+            },
+            "userBadges": {
+                "badges": [
+                    {
+                        "name": "rating",
+                        "level": "2",
+                        "value": ""
+                    },
+                    {
+                        "name": "friendliness",
+                        "level": "1",
+                        "value": ""
+                    },
+                    {
+                        "name": "reliability",
+                        "level": "1",
+                        "value": ""
+                    }
+                ]
+            },
+            "placeholder-image-present": {
+                "value": "false"
+            },
+            "ad-source-id": {
+                "value": "8"
+            },
+            "ad-external-reference-id": {},
+            "phone": {},
+            "originId": {
+                "value": "8"
+            },
+            "start-date-time": {
+                "value": "2025-04-27T12:00:38.000+0200"
+            },
+            "user-since-date-time": {
+                "value": "2014-02-25T21:44:07.000+0100"
+            },
+            "last-user-edit-date": {
+                "value": "2025-04-27T12:00:35.000+0200"
+            },
+            "features-active": {
+                "feature-active": []
+            },
+            "category": {
+                "id-name": {
+                    "value": "Foto"
+                },
+                "localized-name": {
+                    "value": "Foto"
+                },
+                "link": [],
+                "category": [],
+                "parent-id": {
+                    "value": "161"
+                },
+                "has-fake-sub-category": {
+                    "value": "true"
+                },
+                "id": "245"
+            },
+            "locations": {
+                "location": [
+                    {
+                        "id-name": {
+                            "value": "10317"
+                        },
+                        "localized-name": {
+                            "value": "10317 Rummelsburg"
+                        },
+                        "longitude": {
+                            "value": "13.486727"
+                        },
+                        "latitude": {
+                            "value": "52.502438"
+                        },
+                        "radius": {
+                            "value": "5.0"
+                        },
+                        "regions": {
+                            "region": [
+                                {
+                                    "localized-name": {
+                                        "value": "Berlin"
+                                    }
+                                }
+                            ],
+                            "localized-label": "Bundesland"
+                        },
+                        "location": [],
+                        "parent-id": {
+                            "value": "25914"
+                        },
+                        "children-count": {
+                            "value": "0"
+                        },
+                        "id": "25915"
+                    }
+                ]
+            },
+            "shipping-options": {
+                "shipping-option": [
+                    {
+                        "id": "DHL_002"
+                    },
+                    {
+                        "id": "HERMES_003"
+                    }
+                ]
+            },
+            "buy-now": {
+                "selected": "false"
+            },
+            "buyer-fee-in-euro-cent": {
+                "value": "230"
+            },
+            "attributes": {
+                "attribute": [
+                    {
+                        "value": [
+                            {
+                                "value": "camera",
+                                "localized-label": "Kamera"
+                            }
+                        ],
+                        "name": "foto.art",
+                        "unit": "",
+                        "search-display": "false",
+                        "fake-sub-category": "true",
+                        "search-multi-select": "true",
+                        "type": "ENUM",
+                        "localized-label": "Art"
+                    },
+                    {
+                        "value": [
+                            {
+                                "value": "ja",
+                                "localized-label": "ab 6,99"
+                            }
+                        ],
+                        "name": "foto.versand",
+                        "unit": "€",
+                        "search-display": "true",
+                        "fake-sub-category": "false",
+                        "search-multi-select": "false",
+                        "localized-tag": "Versand möglich",
+                        "type": "ENUM",
+                        "localized-label": "Versand"
+                    }
+                ]
+            },
+            "link": [
+                {
+                    "href": "https://api.kleinanzeigen.de:443/api/ads/3069125522",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://api.kleinanzeigen.de:443/api/users/19668562/ads/3069125522",
+                    "rel": "self-user"
+                },
+                {
+                    "href": "https://www.kleinanzeigen.de/s-anzeige/canonet-28-canon-kleinbildkamera-35mm-analog-kamera/3069125522-245-25915",
+                    "rel": "self-public-website"
+                }
+            ],
+            "pictures": {
+                "picture": [
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c20d8b65-f2c7-4645-8ac2-66fc69f3dce1?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c20d8b65-f2c7-4645-8ac2-66fc69f3dce1?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c20d8b65-f2c7-4645-8ac2-66fc69f3dce1?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c20d8b65-f2c7-4645-8ac2-66fc69f3dce1?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c20d8b65-f2c7-4645-8ac2-66fc69f3dce1?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c2/c20d8b65-f2c7-4645-8ac2-66fc69f3dce1?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/08/089299aa-e236-42d8-8c8f-9d5b31a07023?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/08/089299aa-e236-42d8-8c8f-9d5b31a07023?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/08/089299aa-e236-42d8-8c8f-9d5b31a07023?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/08/089299aa-e236-42d8-8c8f-9d5b31a07023?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/08/089299aa-e236-42d8-8c8f-9d5b31a07023?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/08/089299aa-e236-42d8-8c8f-9d5b31a07023?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4a58c46a-e583-444a-bd72-e1379f2b6f47?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4a58c46a-e583-444a-bd72-e1379f2b6f47?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4a58c46a-e583-444a-bd72-e1379f2b6f47?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4a58c46a-e583-444a-bd72-e1379f2b6f47?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4a58c46a-e583-444a-bd72-e1379f2b6f47?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/4a/4a58c46a-e583-444a-bd72-e1379f2b6f47?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/bd/bd6009bc-76b7-41d7-ab68-100a02a192f4?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/bd/bd6009bc-76b7-41d7-ab68-100a02a192f4?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/bd/bd6009bc-76b7-41d7-ab68-100a02a192f4?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/bd/bd6009bc-76b7-41d7-ab68-100a02a192f4?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/bd/bd6009bc-76b7-41d7-ab68-100a02a192f4?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/bd/bd6009bc-76b7-41d7-ab68-100a02a192f4?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    },
+                    {
+                        "link": [
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/ee/eea64312-62a1-403a-8e4d-4b022dec16c8?rule=$_0.JPG",
+                                "rel": "thumbnail"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/ee/eea64312-62a1-403a-8e4d-4b022dec16c8?rule=$_2.JPG",
+                                "rel": "teaser"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/ee/eea64312-62a1-403a-8e4d-4b022dec16c8?rule=$_1.JPG",
+                                "rel": "large"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/ee/eea64312-62a1-403a-8e4d-4b022dec16c8?rule=$_59.JPG",
+                                "rel": "extraLarge"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/ee/eea64312-62a1-403a-8e4d-4b022dec16c8?rule=$_57.JPG",
+                                "rel": "XXL"
+                            },
+                            {
+                                "href": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/ee/eea64312-62a1-403a-8e4d-4b022dec16c8?rule=$_{imageId}.JPG",
+                                "rel": "canonicalUrl"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "documents": {
+                "document": []
+            },
+            "displayoptions": {
+                "reduced-ads-on-vip": {
+                    "value": "false"
+                },
+                "hide-ads-on-vip": {
+                    "value": "false"
+                },
+                "show-ratings": {
+                    "value": "true"
+                },
+                "ad-flagging-enabled": {
+                    "value": "true"
+                },
+                "hide-similard-ads-on-vip": {
+                    "value": "false"
+                },
+                "category-change-allowed": {
+                    "value": "true"
+                },
+                "offer-allowed": {
+                    "value": "true"
+                },
+                "secure-payment-possible": {
+                    "value": "false"
+                },
+                "ad-description-formatting-enabled": {
+                    "value": "false"
+                },
+                "ad-documents-upload-enabled": {
+                    "value": "false"
+                },
+                "display-map-on-vip": {
+                    "value": "false"
+                },
+                "licence-plate-blurring-enabled": {
+                    "value": "false"
+                },
+                "contact-poster-feedback": "",
+                "lead-generation-target": {
+                    "value": "false"
+                },
+                "enable-image-titles": {
+                    "value": "false"
+                },
+                "eligible-for-call-tracking": {
+                    "value": "false"
+                },
+                "contact-button-on-vip": {
+                    "value": "true",
+                    "action": {
+                        "type": "Conversation",
+                        "data": ""
+                    }
+                }
+            },
+            "tracking": {
+                "user-account-type": {
+                    "value": "private"
+                }
+            },
+            "medias": {
+                "media": []
+            },
+            "financing-eligible": {
+                "value": "false"
+            },
+            "re-financing-eligible": {
+                "value": "false"
+            },
+            "otherAttributes": {},
+            "id": "3069125522",
+            "version": "1.16",
+            "locale": "de_DE"
+        },
+        "nil": false,
+        "globalScope": true,
+        "typeSubstituted": true
+    }
+}

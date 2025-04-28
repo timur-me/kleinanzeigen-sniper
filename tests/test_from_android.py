@@ -8,7 +8,7 @@ HEADERS = {
     "User-Agent": "Kleinanzeigen/100.43.3 (Android 9; google G011A)",
     "X-ECG-USER-AGENT": "ebayk-android-app-100.43.3",
     "X-ECG-USER-VERSION": "100.43.3",
-    "X-EBAYK-APP": "b760cd24-4c2a-4cb8-9386-dff025040d6f1745598430588",
+    "X-EBAYK-APP": "b760cd24-4c2a-4cb8-9386-333325040d6f1745598430588",
     "Authorization": "Basic YW5kcm9pZDpUYVI2MHBFdHRZ"
 }
 
@@ -56,16 +56,21 @@ async def main():
         # Convert the data to a more readable format if needed
         # In this case, we're just saving the raw response
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(ads, f, ensure_ascii=False, indent=2)
+            json.dump(ads, f, ensure_ascii=False, indent=4)
         
         print(f"Search results saved to {output_file}")
 
-        # selected_ads = random.sample(ads, min(4, len(ads)))
-        # for ad in selected_ads:
-        #     ad_id = ad.get("id")
-        #     if ad_id:
-        #         print(f"\nFetching details for ad ID: {ad_id}")
-        #         detail = await fetch_ad_details(session, ad_id=ad_id)
-        #         print(json.dumps(detail, indent=2)[:1000], "...")  # show only first 1000 chars
+        selected_ads = random.sample(ads, min(4, len(ads)))
+        for ad in selected_ads[:1]:
+            ad_id = ad.get("id")
+            if ad_id:
+                print(f"\nFetching details for ad ID: {ad_id}")
+                detail = await fetch_ad_details(session, ad_id=ad_id)
+
+                output_file = f"tests/api_item_{ad_id}.json"
+
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    json.dump(detail, f, ensure_ascii=False, indent=4)
+        
 
 asyncio.run(main())
