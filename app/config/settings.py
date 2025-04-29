@@ -38,6 +38,13 @@ class Settings(BaseSettings):
     # Logging
     LOG_DIR: Path = ROOT_DIR / "logs"
     LOG_LEVEL: str = "INFO"
+
+    # Database settings
+    DB_HOST: str = "localhost"
+    DB_PORT: int = 5432
+    DB_USER: str = "postgres"
+    DB_PASSWORD: str = "postgres"
+    DB_NAME: str = "kleinanzeigen-sniper"
     
     @field_validator("ADMIN_USER_IDS", mode="before")
     def validate_admin_ids(cls, v):
@@ -49,6 +56,11 @@ class Settings(BaseSettings):
                 # Try to parse comma-separated string
                 return [int(x.strip()) for x in v.split(",")]
         return v
+    
+    @property
+    def database_url(self) -> str:
+        return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+
 
     class Config:
         env_file = ".env"
