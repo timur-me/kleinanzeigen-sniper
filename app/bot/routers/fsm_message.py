@@ -9,10 +9,12 @@ from app.bot.keyboards import (
     get_main_menu,
     get_locations_keyboard
 )
-from app.models.models import SearchSettings
-from app.services.storage import search_settings_storage
+from app.db.models import SearchSettings
 from app.bot.routers.states import AddSearchStates
 from app.kleinanzeigen.kleinanzeigen_client import KleinanzeigenClient
+from app.db.database import async_session
+from app.services import SearchSettingsService
+
 
 fsm_router = Router()
 
@@ -134,7 +136,9 @@ async def confirm_add_search(callback: CallbackQuery, state: FSMContext):
     )
     
     # Save to storage
-    search_settings_storage.save(search)
+    async with async_session() as session:
+        search_settings_service = SearchSettingsService(session)
+        search = await search_settings_service.create(search)
     
     # Clear state
     await state.clear()

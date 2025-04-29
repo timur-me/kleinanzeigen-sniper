@@ -15,6 +15,7 @@ from app.bot.routers import (
     callback_router,
     fsm_router, 
 )
+from app.db.database import engine
 from app.bot.middlewares import UserAccessMiddleware
 from app.bot.notifications import send_item_notifications
 from app.config.settings import settings
@@ -29,12 +30,10 @@ logger = setup_logging()
 async def on_startup(bot: Bot):
     """Execute actions on bot startup."""
     logger.info("Bot is starting up...")
-
-    # TODO: REWORK THIS parsing worker.
     
     # Start parsing worker
-    # logger.info("Starting parsing worker...")
-    # parsing_worker.start()
+    logger.info("Starting parsing worker...")
+    parsing_worker.start()
     
     # Set up commands
     await bot.set_my_commands([
@@ -52,9 +51,16 @@ async def on_shutdown(bot: Bot):
     """Execute actions on bot shutdown."""
     logger.info("Bot is shutting down...")
     
-    # # Stop parsing worker
-    # logger.info("Stopping parsing worker...")
-    # parsing_worker.stop()
+    # Stop parsing worker
+    logger.info("Stopping parsing worker...")
+    parsing_worker.stop()
+
+    # Close database connections
+    logger.info("Closing database connections...")
+    
+    # Close the SQLAlchemy engine which manages the connection pool
+    await engine.dispose()
+    logger.info("Database connections closed.")
     
     logger.info("Bot shutdown completed.")
 
@@ -68,7 +74,7 @@ async def scheduled_notifications(bot: Bot):
             logger.error(f"Error sending notifications: {e}")
         
         # Wait before next notification cycle
-        await asyncio.sleep(60)  # Run every minute
+        await asyncio.sleep(settings.NOTIFICATION_INTERVAL)  # Run every minute
 
 
 async def main():
@@ -105,7 +111,7 @@ async def main():
     dp.shutdown.register(on_shutdown)
     
     # Start notifications task
-    # asyncio.create_task(scheduled_notifications(bot))
+    asyncio.create_task(scheduled_notifications(bot))
     
     # Start polling
     logger.info("Starting polling...")

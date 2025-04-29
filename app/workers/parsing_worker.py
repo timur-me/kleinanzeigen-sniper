@@ -24,12 +24,12 @@ class ParsingWorker:
             await scan_service.scan_for_new_items()
             
             logger.info("Parsing cycle completed")
-        
         except Exception as e:
             logger.error(f"Error in parsing cycle: {e}")
     
     async def run_forever(self):
         """Run the parsing worker in an infinite loop."""
+        await asyncio.sleep(3) # waiting for the bot to start
         self.running = True
         
         while self.running:

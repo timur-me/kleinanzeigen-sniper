@@ -23,8 +23,8 @@ class NotificationRepository(AsyncRepository[Notification]):
             )
         )
         return result.scalars().all()
-
-    async def create_notification_if_not_exists(self, item_id: str, user_id: int, search_id: str) -> Notification | None:
+    
+    async def exists(self, item_id: str, user_id: int, search_id: str) -> bool:
         result = await self.session.execute(
             select(self.model).where(
                 and_(
@@ -34,14 +34,13 @@ class NotificationRepository(AsyncRepository[Notification]):
                 )
             )
         )
-        exists = result.scalar_one_or_none()
-        if exists:
-            return None
-
+        return result.scalar_one_or_none() is not None
+    
+    async def create_notification(self, item_id: str, user_id: int, search_id: str, is_sent: bool) -> Notification:
         new_notif = Notification(
             item_id=item_id,
             user_id=user_id,
             search_id=search_id,
-            is_sent=False,
+            is_sent=is_sent,
         )
         return await self.save(new_notif)

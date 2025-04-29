@@ -3,11 +3,8 @@ from aiogram.types import Message
 from loguru import logger
 import re
 
-from app.bot.keyboards import (
-    get_item_link_keyboard
-)
 from app.kleinanzeigen.kleinanzeigen_client import KleinanzeigenClient
-from app.builders.message_builder import SingleItemMessageBuilder
+from app.builders.message_builder import SingleKleinanzeigenItemMessageBuilder
 
 link_router = Router()
 
@@ -33,26 +30,18 @@ async def handle_kleinanzeigen_link(message: Message):
         await message.answer("Sorry, I couldn't fetch the item details.")
         return
 
-    message_builder = SingleItemMessageBuilder(item_data)
+    message_builder = SingleKleinanzeigenItemMessageBuilder(item_data)
     
     # Create keyboard
     # TODO: Add setting field if person wants to have this button
     # keyboard = get_item_link_keyboard(item_data.ad_link)
     
     if message_builder.message_media:
-        # Send media group
         await message.answer_media_group(media=message_builder.message_media)
         
-        # # Send the keyboard separately
-        # await message.answer(
-        #     text="Click below to view the item:",
-        #     reply_markup=keyboard
-        # )
     else:
-        # No images, send text only
         await message.answer(
             text=message_builder.message_text,
-            # reply_markup=keyboard,
             parse_mode="Markdown"
         )
     

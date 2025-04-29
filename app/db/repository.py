@@ -18,9 +18,17 @@ class AsyncRepository(Generic[T]):
 
     async def get_by_id(self, id_value: Any) -> Optional[T]:
         return await self.session.get(self.model, id_value)
+    
+    async def exists(self, id_value: Any) -> bool:
+        return await self.session.get(self.model, id_value) is not None
 
     async def save(self, instance: T) -> T:
         self.session.add(instance)
+        await self.session.commit()
+        await self.session.refresh(instance)
+        return instance
+    
+    async def update(self, instance: T) -> T:
         await self.session.commit()
         await self.session.refresh(instance)
         return instance

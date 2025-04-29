@@ -9,9 +9,10 @@ from app.bot.keyboards import (
     get_search_list_keyboard,
     get_search_settings_keyboard,
 )
-from app.services.storage import search_settings_storage
+from app.builders.message_builder import SingleSearchMessageBuilder
 from app.bot.routers.states import AddSearchStates
-
+from app.db.database import async_session
+from app.services import SearchSettingsService
 callback_router = Router()
 
 
@@ -33,30 +34,22 @@ async def cb_view_search(callback: CallbackQuery):
     search_id = callback.data.split(":", 1)[1]
     
     # Get search details
-    search = search_settings_storage.get_by_id(search_id)
+    async with async_session() as session:
+        search_settings_service = SearchSettingsService(session)
+        search = await search_settings_service.get_by_id(search_id)
     
     if not search:
         await callback.message.edit_text(
             "Search not found. It may have been deleted.",
-            reply_markup=get_search_list_keyboard([])
+            reply_markup=await get_search_list_keyboard([])
         )
         await callback.answer()
         return
     
-    # Format search details
-    status = "✅ Active" if search.is_active else "❌ Inactive"
-    
-    search_details = (
-        f"📊 *Search Details*\n\n"
-        f"*Item:* {search.item_name}\n"
-        f"*Location:* {search.location_name}\n"
-        f"*Radius:* {search.radius_km} km\n"
-        f"*Status:* {status}\n"
-        f"*Created:* {search.created_at.strftime('%Y-%m-%d')}"
-    )
+    search_details = SingleSearchMessageBuilder(search)
     
     await callback.message.edit_text(
-        search_details,
+        search_details.message_text,
         reply_markup=get_search_settings_keyboard(search_id),
         parse_mode="Markdown"
     )
@@ -83,27 +76,29 @@ async def cb_confirm_delete(callback: CallbackQuery):
     search_id = callback.data.split(":", 1)[1]
     
     # Delete the search
-    result = search_settings_storage.delete(search_id)
+    async with async_session() as session:
+        search_settings_service = SearchSettingsService(session)
+        result = await search_settings_service.delete(search_id)
     
-    if result:
-        await callback.message.edit_text(
-            "Search has been deleted successfully."
-        )
-    else:
-        await callback.message.edit_text(
-            "Error deleting search. It may have already been deleted.",
-        )
-    
-    # Get updated search list for this user
-    user_id = callback.from_user.id
-    searches = search_settings_storage.get_by_user_id(user_id)
+        if result:
+            await callback.message.edit_text(
+                "Search has been deleted successfully."
+            )
+        else:
+            await callback.message.edit_text(
+                "Error deleting search. It may have already been deleted.",
+            )
+        
+        # Get updated search list for this user
+        user_id = callback.from_user.id
+        searches = await search_settings_service.get_by_user_id(user_id)
     
     if searches:
         search_ids = [s.id for s in searches]
         
         await callback.message.answer(
             f"You have {len(searches)} saved search{'es' if len(searches) != 1 else ''}. Select one to view details:",
-            reply_markup=get_search_list_keyboard(search_ids)
+            reply_markup=await get_search_list_keyboard(search_ids)
         )
     else:
         await callback.message.answer(
@@ -118,35 +113,24 @@ async def cb_confirm_delete(callback: CallbackQuery):
 async def cb_toggle_search(callback: CallbackQuery):
     """Handle toggle_search callback."""
     search_id = callback.data.split(":", 1)[1]
+    async with async_session() as session:
+        search_settings_service = SearchSettingsService(session)
+        search = await search_settings_service.get_by_id(search_id)
     
-    # Get search
-    search = search_settings_storage.get_by_id(search_id)
+        if not search:
+            await callback.message.edit_text(
+                "Search not found. It may have been deleted.",
+            )
+            await callback.answer()
+            return
     
-    if not search:
-        await callback.message.edit_text(
-            "Search not found. It may have been deleted.",
-        )
-        await callback.answer()
-        return
+        # Toggle status
+        await search_settings_service.toggle(search_id)
     
-    # Toggle status
-    search.is_active = not search.is_active
-    search_settings_storage.save(search)
-    
-    # Format updated search details
-    status = "✅ Active" if search.is_active else "❌ Inactive"
-    
-    search_details = (
-        f"📊 *Search Details*\n\n"
-        f"*Item:* {search.item_name}\n"
-        f"*Location:* {search.location_name}\n"
-        f"*Radius:* {search.radius_km} km\n"
-        f"*Status:* {status}\n"
-        f"*Created:* {search.created_at.strftime('%Y-%m-%d')}"
-    )
+    search_details = SingleSearchMessageBuilder(search)
     
     await callback.message.edit_text(
-        search_details,
+        search_details.message_text,
         reply_markup=get_search_settings_keyboard(search_id),
         parse_mode="Markdown"
     )
@@ -160,7 +144,9 @@ async def cb_back_to_searches(callback: CallbackQuery):
     user_id = callback.from_user.id
     
     # Get all searches for this user
-    searches = search_settings_storage.get_by_user_id(user_id)
+    async with async_session() as session:
+        search_settings_service = SearchSettingsService(session)
+        searches = await search_settings_service.get_by_user_id(user_id)
     
     if not searches:
         await callback.message.edit_text(
@@ -174,7 +160,7 @@ async def cb_back_to_searches(callback: CallbackQuery):
     
     await callback.message.edit_text(
         f"You have {len(searches)} saved search{'es' if len(searches) != 1 else ''}. Select one to view details:",
-        reply_markup=get_search_list_keyboard(search_ids)
+        reply_markup=await get_search_list_keyboard(search_ids)
     )
     
     await callback.answer()
@@ -187,12 +173,15 @@ async def cb_search_page(callback: CallbackQuery):
     user_id = callback.from_user.id
     
     # Get all searches for this user
-    searches = search_settings_storage.get_by_user_id(user_id)
+    async with async_session() as session:
+        search_settings_service = SearchSettingsService(session)
+        searches = await search_settings_service.get_by_user_id(user_id)
+    
     search_ids = [s.id for s in searches]
     
     await callback.message.edit_text(
         f"You have {len(searches)} saved search{'es' if len(searches) != 1 else ''}. Select one to view details:",
-        reply_markup=get_search_list_keyboard(search_ids, page=page)
+        reply_markup=await get_search_list_keyboard(search_ids, page=page)
     )
     
     await callback.answer()

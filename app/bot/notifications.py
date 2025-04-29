@@ -1,13 +1,10 @@
 from aiogram import Bot
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from aiogram.types import InputMediaPhoto
 from loguru import logger
 
-from app.models.models import Item, User
-from app.services.storage import item_storage, user_storage
+from app.db.models import Item, User
 from app.services.notification_service import notification_service
 from app.kleinanzeigen.models import KleinanzeigenItem
-from app.builders.message_builder import SingleItemMessageBuilder
+from app.builders.message_builder import SingleKleinanzeigenItemMessageBuilder
 
 
 async def send_item_notifications(bot: Bot):
@@ -28,7 +25,7 @@ async def send_item_notification(bot: Bot, user: User, item: Item):
     """Send notification about a single item to a user."""
 
     kleinanzeigen_item = KleinanzeigenItem(item.raw_data)
-    message_builder = SingleItemMessageBuilder(kleinanzeigen_item)
+    message_builder = SingleKleinanzeigenItemMessageBuilder(kleinanzeigen_item)
     message_builder.build()
 
     try:

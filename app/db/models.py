@@ -44,7 +44,7 @@ class SearchSettings(Base):
     __tablename__ = "search_settings"
 
     id = Column(String, primary_key=True, default=lambda: str(uuid4()))
-    user_id = Column(Integer, ForeignKey('users.user_id'))
+    user_id = Column(BigInteger, ForeignKey('users.user_id'))
     item_name = Column(String)
     location_id = Column(String)
     location_name = Column(String)
@@ -63,7 +63,7 @@ class Notification(Base):
 
     id = Column(String, primary_key=True, default=lambda: str(uuid4()))
     item_id = Column(String, ForeignKey('items.id'))
-    user_id = Column(Integer, ForeignKey('users.user_id'))
+    user_id = Column(BigInteger, ForeignKey('users.user_id'))
     search_id = Column(String, ForeignKey('search_settings.id'))
     is_sent = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)

@@ -10,7 +10,8 @@ from app.bot.keyboards import (
     get_main_menu,
     get_search_list_keyboard,
 )
-from app.services.storage import search_settings_storage
+from app.services import SearchSettingsService
+from app.db.database import async_session
 from app.bot.routers.states import AddSearchStates
 
 # Create routers
@@ -22,7 +23,9 @@ async def cmd_searches(message: Message):
     user_id = message.from_user.id
     
     # Get all searches for this user
-    searches = search_settings_storage.get_by_user_id(user_id)
+    async with async_session() as session:
+        search_settings_service = SearchSettingsService(session)
+        searches = await search_settings_service.get_by_user_id(user_id)
     
     if not searches:
         await message.answer(
@@ -36,7 +39,7 @@ async def cmd_searches(message: Message):
     
     await message.answer(
         f"You have {len(searches)} saved search{'es' if len(searches) != 1 else ''}. Select one to view details:",
-        reply_markup=get_search_list_keyboard(search_ids)
+        reply_markup=await get_search_list_keyboard(search_ids)
     )
 
 
