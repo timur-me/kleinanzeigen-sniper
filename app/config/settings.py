@@ -41,6 +41,7 @@ class Settings(BaseSettings):
 
     # Scan settings
     KLEINANZEIGEN_CONCURRENT_REQUESTS_FOR_SCAN: int = 5
+    KLEINANZEIGEN_MAX_ITEMS_PER_PAGE: int = 10
     
     @field_validator("ADMIN_USER_IDS", mode="before")
     def validate_admin_ids(cls, v):
