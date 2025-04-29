@@ -95,30 +95,3 @@ class Notification(BaseModel):
         """Mark notification as sent."""
         self.is_sent = True
         self.sent_at = datetime.now()
-
-
-class ItemNotification(BaseModel):
-    """Model for storing item data and its notification status."""
-    
-    item: KleinanzeigenItem
-    notifications: List[Notification] = []
-    created_at: datetime = Field(default_factory=datetime.now)
-    updated_at: datetime = Field(default_factory=datetime.now)
-
-    def add_notification(self, user_id: int, search_id: str) -> Notification:
-        """Add a new notification for a user."""
-        notification = Notification(
-            item_id=self.item.id,
-            user_id=user_id,
-            search_id=search_id
-        )
-        self.notifications.append(notification)
-        return notification
-
-    def get_pending_notifications(self) -> List[Notification]:
-        """Get all pending notifications."""
-        return [n for n in self.notifications if not n.is_sent]
-
-    def get_sent_notifications(self) -> List[Notification]:
-        """Get all sent notifications."""
-        return [n for n in self.notifications if n.is_sent] 

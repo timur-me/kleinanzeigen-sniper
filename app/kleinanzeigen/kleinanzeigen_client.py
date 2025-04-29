@@ -45,7 +45,7 @@ class KleinanzeigenClient:
         params = self.get_params(
             search_settings.item_name,
             page=0,
-            size=10,
+            size=4,
             location_id=search_settings.location_id,
             distance=search_settings.radius_km
         )

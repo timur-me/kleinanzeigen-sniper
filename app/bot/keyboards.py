@@ -2,8 +2,8 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardBu
 
 from app.kleinanzeigen.models import KleinanzeigenItemLocation
 
-from app.services.repositories import search_settings_repository
-
+from app.db.database import async_session
+from app.db.repositories import SearchSettingsRepository
 
 
 # Main menu keyboard
@@ -62,7 +62,7 @@ def get_locations_keyboard(locations: list[KleinanzeigenItemLocation]) -> Inline
 
 
 # Search list pagination keyboard
-def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: int = 5) -> InlineKeyboardMarkup:
+async def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: int = 5) -> InlineKeyboardMarkup:
     """Create paginated keyboard for search list."""
     keyboard = []
     
@@ -74,7 +74,10 @@ def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: int = 5
     # Add search buttons for current page
     for i in range(start_idx, end_idx):
         search_id = search_ids[i]
-        search_settings = search_settings_repository.get_by_id(search_id)
+        async with async_session() as session:
+            repo = SearchSettingsRepository(session)
+            search_settings = await repo.get_by_id(search_id)
+
         status_emoji = "✅" if search_settings.is_active else "❌"
         search_name = search_settings.item_name
         keyboard.append([
@@ -97,6 +100,11 @@ def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: int = 5
     keyboard.append([
         InlineKeyboardButton(text="➕ Add New Search", callback_data="add_search")
     ])
+
+    # Cancel button
+    keyboard.append([
+        get_cancel_button()
+    ])
     
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
@@ -105,9 +113,7 @@ def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: int = 5
 def get_cancel_keyboard() -> InlineKeyboardMarkup:
     """Create a simple cancel keyboard."""
     keyboard = [
-        [
-            InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")
-        ]
+        [get_cancel_button()]
     ]
     return InlineKeyboardMarkup(inline_keyboard=keyboard) 
 
@@ -121,3 +127,8 @@ def get_item_link_keyboard(item_url: str) -> InlineKeyboardMarkup:
     )
 
     return keyboard
+
+# Cancel button
+def get_cancel_button() -> InlineKeyboardButton:
+    """Create a simple cancel button."""
+    return InlineKeyboardButton(text="⬅️ Cancel", callback_data="cancel")
