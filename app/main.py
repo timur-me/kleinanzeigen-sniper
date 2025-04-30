@@ -114,8 +114,12 @@ async def main():
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
     
-    # Start notifications task
-    asyncio.create_task(scheduled_notifications(bot))
+    # Start notifications task with a 5-second delay
+    async def delayed_notifications_start(bot: Bot):
+        await asyncio.sleep(5)  # Wait for 5 seconds before starting
+        await scheduled_notifications(bot)
+    
+    asyncio.create_task(delayed_notifications_start(bot))
     
     # Start polling
     logger.info("Starting polling...")
