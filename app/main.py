@@ -13,7 +13,9 @@ from app.bot.routers import (
     keyboard_router,
     link_router,
     callback_router,
-    fsm_router, 
+    # fsm_router, 
+    search_create_router,
+    settings_router
 )
 from app.db.database import engine
 from app.bot.middlewares import UserAccessMiddleware
@@ -28,7 +30,7 @@ logger = setup_logging()
 
 
 async def on_startup(bot: Bot):
-    """Execute actions on bot startup."""
+    """Execute actions on bot startup."""   
     logger.info("Bot is starting up...")
     
     # Start parsing worker
@@ -102,8 +104,10 @@ async def main():
         help_router,
         keyboard_router,
         link_router,
-        fsm_router,
-        callback_router
+        # fsm_router,
+        callback_router,
+        search_create_router,
+        settings_router
     )
     
     # Set up event handlers

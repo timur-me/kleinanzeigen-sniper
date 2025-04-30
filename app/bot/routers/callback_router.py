@@ -13,19 +13,9 @@ from app.builders.message_builder import SingleSearchMessageBuilder
 from app.bot.routers.states import AddSearchStates
 from app.db.database import async_session
 from app.services import SearchSettingsService
+
 callback_router = Router()
 
-
-# Callback query handlers (for inline keyboards)
-@callback_router.callback_query(F.data == "add_search")
-async def cb_add_search(callback: CallbackQuery, state: FSMContext):
-    """Handle add_search callback."""
-    await callback.message.edit_text(
-        "Let's add a new search! What item are you looking for?",
-    )
-    
-    await state.set_state(AddSearchStates.waiting_for_item_name)
-    await callback.answer()
 
 
 @callback_router.callback_query(F.data.startswith("view_search:"))

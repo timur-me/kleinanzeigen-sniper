@@ -19,13 +19,16 @@ class SingleItemMessageBuilder(MessageBuilder):
 
 class SingleKleinanzeigenItemMessageBuilder(SingleItemMessageBuilder):
     """Builder for a single item message."""
-    def __init__(self, item: KleinanzeigenItemType):
+    def __init__(self, item: KleinanzeigenItemType, search_settings: SearchSettings | None= None):
         self.item = item
+        self.search_settings = search_settings
         self.message_text = self._build_message_text()
         self.message_media = self._build_message_media()
 
     def _build_message_text(self) -> str:
-        message_text = \
+        message_text = ""
+        message_text += f"{self.search_settings.alias} was triggered!\n\n" if self.search_settings is not None else ""
+        message_text += \
 f"""🔍 *Item Details*
 
 [{self.item.title}]({self.item.ad_link})
@@ -34,13 +37,14 @@ f"""🔍 *Item Details*
 📍 *Location:* {str(self.item.location)}
 📅 *Published:* {self.item.ad_post_date_str}
 
-📝 *Description:*\n{self.item.description}
+📝 *Description:*\n{self.item.description}\n\n"""
 
-👤 *Seller:*
+        message_text += \
+f"""👤 *Seller:*
  • Name: {self.item.seller.name}
  • Rating: {self.item.seller.user_rating}
  • Member since: {self.item.seller.registration_date.year if self.item.seller.registration_date else 'Unknown'}
-"""
+""" if self.item.seller.name is not None else ""
         
         return message_text
     
@@ -72,13 +76,20 @@ class SingleSearchMessageBuilder(SingleItemMessageBuilder):
 
     def _build_message_text(self) -> str:
         message_text = \
-f"""📊 *Search Details*
+f"""
+🔍 *Search name:* `{self.search.alias}`
+✏️ *Item name:* `{self.search.item_name}`
 
-*Item:* {self.search.item_name}
-*Location:* {self.search.location_name}
-*Radius:* {self.search.radius_km} km
-*Status:* {"✅ Active" if self.search.is_active else "❌ Inactive"}
-*Created:* {self.search.created_at.strftime('%Y-%m-%d')}
+💶 *Price range:* `{self.search.lowest_price}` – `{self.search.highest_price}` EUR  
+🔍 *Location:* `{self.search.location_name}` (+{self.search.radius_km} km)
+
+🏷️ *Category:* _{self.search.category_name or "Any"}_
+🔖 *Ad type:* _{self.search.ad_type.value.capitalize() if self.search.ad_type else "Any"}_
+👤 *Poster type:* _{self.search.poster_type.value.capitalize() if self.search.poster_type else "Any"}_
+📷 *Photos required:* {"✅ Yes" if self.search.is_picture_required else "❌ No"}
+
+🔄 *Status:* {"✅ Active" if self.search.is_active else "❌ Inactive"}
+🗓️ *Created:* {self.search.created_at.strftime('%Y-%m-%d %H:%M')}
 """
         
         return message_text

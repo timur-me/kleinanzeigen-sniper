@@ -33,7 +33,7 @@ class ScanService:
             await self._process_search(search)
 
     async def _process_search(self, search: SearchSettings):
-        logger.info(f"➡️ Processing search: {search.item_name} in {search.location_name}")
+        logger.info(f"➡️ Processing search: {search.alias} for {search.user_id}")
 
         try:
             items = await self.kleinanzeigen_client.fetch_items(search)
