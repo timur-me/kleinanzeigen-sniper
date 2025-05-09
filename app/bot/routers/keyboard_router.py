@@ -47,11 +47,11 @@ async def cmd_searches(message: Message):
 async def cmd_add(message: Message, state: FSMContext):
     """Handle /add command to start adding a new search."""
     await message.answer(
-        "Let's add a new search! What item are you looking for?",
-        reply_markup=get_cancel_keyboard()
+        "🔍 Write search name:",
     )
     
-    await state.set_state(AddSearchStates.waiting_for_item_name)
+    await state.update_data()
+    await state.set_state(AddSearchStates.waiting_for_search_name)
 
 
 @keyboard_router.message(Command("cancel"))
@@ -90,12 +90,3 @@ async def btn_add_search(message: Message, state: FSMContext):
 async def btn_help(message: Message):
     """Handle Help button."""
     await cmd_help(message)
-
-
-@keyboard_router.message(F.text == "⚙️ Settings")
-async def btn_settings(message: Message):
-    """Handle Settings button."""
-    await message.answer(
-        "Settings functionality is coming soon! Stay tuned for updates.",
-        reply_markup=get_main_menu()
-    )

@@ -4,7 +4,7 @@ import random
 
 from loguru import logger
 
-from app.models.models import SearchSettings
+from app.db.models import SearchSettings
 from app.config.settings import settings
 
 from .models import KleinanzeigenItem, KleinanzeigenItemLocation
@@ -43,11 +43,8 @@ class KleinanzeigenClient:
     
     async def fetch_items(self, search_settings: SearchSettings) -> Optional[List[KleinanzeigenItem]]:
         params = self.get_params(
-            search_settings.item_name,
-            page=0,
+            search_settings,
             size=settings.KLEINANZEIGEN_MAX_ITEMS_PER_PAGE,
-            location_id=search_settings.location_id,
-            distance=search_settings.radius_km
         )
 
         response = await self._fetch(self.search_url, params)
@@ -93,31 +90,38 @@ class KleinanzeigenClient:
             logger.error(f"Error fetching {url}: {e}")
             return None
         
-    def get_params(self, query:str, page:int=0, size:int=12, location_id:int=3331, distance:int=15) -> dict:
-        # TODO: add adType, posterType for parameters
+    def get_params(self, search_settings: SearchSettings, size: int = 5) -> dict:
         params = {
-            "_in": "id,title,description,displayoptions,start-date-time,category.id,category.localized_name,ad-address.state,ad-address.zip-code,ad-address.availability-radius-in-km,price,pictures,link,features-active,search-distance,negotiation-enabled,attributes,medias,medias.media,medias.media.title,medias.media.media-link,buy-now,placeholder-image-present,labels,price-reduction,store-id,store-title",
-            "q": query,
-            "page": str(page),
+            # "_in": "id,title,description,displayoptions,start-date-time,category.id,category.localized_name,ad-address.state,ad-address.zip-code,ad-address.availability-radius-in-km,price,pictures,link,features-active,search-distance,negotiation-enabled,attributes,medias,medias.media,medias.media.title,medias.media.media-link,buy-now,placeholder-image-present,labels,price-reduction,store-id,store-title,contact-name,contact-name-initials",
+            "q": search_settings.item_name,
+            "page": "0",
+            "sortType": "DATE_DESCENDING",
             "size": str(size),
-            "locationId": location_id,
-            "distance": distance,
-            "pictureRequired": "false",
+            "pictureRequired": str(search_settings.is_picture_required).lower(),
+            "minPrice": str(search_settings.lowest_price),
+            "maxPrice": str(search_settings.highest_price),
             "includeTopAds": "false",
             "buyNowOnly": "false",
             "labelsGenerationEnabled": "true",
-            "limitTotalResultCount": "true",
-            "sortType": "DATE_DESCENDING"
-        } 
+            "limitTotalResultCount": "true"
+        }
 
-        if location_id is not None:
-            params["locationId"] = location_id
+        if search_settings.ad_type is not None:
+            params["adType"] = search_settings.ad_type.name
 
-            if distance is not None:
-                params["distance"] = distance
+        if search_settings.poster_type is not None:
+            params["posterType"] = search_settings.poster_type.name
+
+        if search_settings.category_id is not None:
+            params["categoryId"] = search_settings.category_id
+
+        if search_settings.location_id is not None:
+            params["locationId"] = search_settings.location_id
+
+            if search_settings.radius_km is not None:
+                params["distance"] = search_settings.radius_km
 
         return params
-
 
     @staticmethod
     def generate_custom_id(extra_digits: int = 13) -> str:

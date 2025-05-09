@@ -79,7 +79,7 @@ async def get_search_list_keyboard(search_ids: list, page: int = 0, page_size: i
             search_settings = await repo.get_by_id(search_id)
 
         status_emoji = "✅" if search_settings.is_active else "❌"
-        search_name = search_settings.item_name
+        search_name = search_settings.alias
         keyboard.append([
             InlineKeyboardButton(text=f"{status_emoji} {search_name}", callback_data=f"view_search:{search_id}")
         ])

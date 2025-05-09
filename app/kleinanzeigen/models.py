@@ -21,7 +21,7 @@ class KleinanzeigenItem(KleinanzeigenItemType):
 
     def __parse_raw_data(self) -> None:
         self.id = self.raw_data.get("id", None)
-        self.title = self.raw_data.get("title", {}).get("value", None)
+        self.title = html.unescape(self.raw_data.get("title", {}).get("value", None))
         self.price = KleinanzeigenItemPrice(self.raw_data.get("price", {}))
         self.ad_type = ItemAdType.from_str(self.raw_data.get("ad-type", {}).get("value", ""))
         self.poster_type = ItemPosterType.from_str(self.raw_data.get("poster-type", {}).get("value", ""))

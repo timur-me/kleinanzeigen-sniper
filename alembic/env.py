@@ -13,7 +13,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from app.config.settings import settings
 from app.db.database import Base
 
-from app.db.models import User, Item, SearchSettings, Notification
+from app.db.models import User, Item, SearchSettings, Notification, UserSettings
 
 # ====== Настройки alembic ======
 config = context.config

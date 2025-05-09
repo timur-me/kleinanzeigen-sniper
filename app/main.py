@@ -13,7 +13,9 @@ from app.bot.routers import (
     keyboard_router,
     link_router,
     callback_router,
-    fsm_router, 
+    # fsm_router, 
+    search_create_router,
+    settings_router
 )
 from app.db.database import engine
 from app.bot.middlewares import UserAccessMiddleware
@@ -28,7 +30,7 @@ logger = setup_logging()
 
 
 async def on_startup(bot: Bot):
-    """Execute actions on bot startup."""
+    """Execute actions on bot startup."""   
     logger.info("Bot is starting up...")
     
     # Start parsing worker
@@ -102,16 +104,22 @@ async def main():
         help_router,
         keyboard_router,
         link_router,
-        fsm_router,
-        callback_router
+        # fsm_router,
+        callback_router,
+        search_create_router,
+        settings_router
     )
     
     # Set up event handlers
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
     
-    # Start notifications task
-    asyncio.create_task(scheduled_notifications(bot))
+    # Start notifications task with a 5-second delay
+    async def delayed_notifications_start(bot: Bot):
+        await asyncio.sleep(5)  # Wait for 5 seconds before starting
+        await scheduled_notifications(bot)
+    
+    asyncio.create_task(delayed_notifications_start(bot))
     
     # Start polling
     logger.info("Starting polling...")

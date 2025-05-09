@@ -8,7 +8,10 @@ class AddSearchStates(StatesGroup):
     waiting_for_location_selection = State()
     waiting_for_radius = State()
     confirmation = State()
-
+    hold = State()
+    waiting_for_search_name = State()
+    waiting_for_lowest_price = State()
+    waiting_for_highest_price = State()
 
 class EditSearchStates(StatesGroup):
     """States for editing an existing search."""
