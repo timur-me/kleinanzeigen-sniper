@@ -5,6 +5,11 @@ A Telegram bot for monitoring and notifying about new listings on Kleinanzeigen.
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![aiogram 3](https://img.shields.io/badge/aiogram-3.x-blue.svg)](https://github.com/aiogram/aiogram)
 
+## ⚠️ Important
+
+This project is intended for educational and research purposes only. The author is not responsible for any misuse.
+Never use Kleinanzeigen API without permission of Kleinanzeigen administration.
+
 ## Features
 
 - Parse Kleinanzeigen.de for new listings with nearly zero latency
